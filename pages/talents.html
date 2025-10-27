@@ -49,76 +49,65 @@
 
     <!-- Main Content -->
     <main class="talents-page">
-        <div class="container py-5 mt-5">
-            <!-- Page Header -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <h1 class="display-4 fw-bold text-white text-center mb-3">Таланты Hololive</h1>
-                    <p class="lead text-center text-muted">Откройте для себя всех виртуальных талантов Hololive Production</p>
-                </div>
-            </div>
-
-            <!-- Filter Section -->
-            <div class="row mb-5">
-                <div class="col-12">
-                    <div class="filter-container bg-dark rounded-3 p-4">
-                        <h3 class="text-white mb-4">Фильтр по подразделениям</h3>
-                        
-                        <!-- Main Branch Filter -->
-                        <div class="row g-3 mb-4">
-                            <div class="col-md-3">
-                                <label class="form-label text-white">Основное подразделение</label>
-                                <select class="form-select bg-secondary text-white border-0" id="mainBranchFilter">
-                                    <option value="all">ALL - Все таланты</option>
-                                    <option value="en">EN - Английское</option>
-                                    <option value="jp">JP - Японское</option>
-                                    <option value="id">ID - Индонезийское</option>
-                                </select>
-                            </div>
-                            
-                            <!-- Subgroup Filter -->
-                            <div class="col-md-6">
-                                <label class="form-label text-white">Подгруппа</label>
-                                <select class="form-select bg-secondary text-white border-0" id="subgroupFilter">
-                                    <option value="all">Все подгруппы</option>
-                                    <!-- Options will be populated by JavaScript -->
-                                </select>
-                            </div>
-                            
-                            <div class="col-md-3 d-flex align-items-end">
-                                <button class="btn btn-outline-light w-100" id="resetFilters">
-                                    <i class="bi bi-arrow-clockwise me-2"></i>Сбросить
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Quick Filter Buttons -->
-                        <div class="quick-filters">
-                            <h5 class="text-white mb-3">Быстрый доступ:</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="myth">EN - Myth</button>
-                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="hope">EN - Project: HOPE</button>
-                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="council">EN - Council</button>
-                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="promise">EN - Promise</button>
-                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="advent">EN - Advent</button>
-                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="justice">EN - Justice</button>
+        <div class="container-fluid px-0">
+            <!-- Main Branch Selection -->
+            <div class="branch-selection bg-dark border-bottom border-secondary">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="branch-menu py-3">
+                                <div class="d-flex justify-content-center flex-wrap gap-3">
+                                    <button class="branch-btn active" data-branch="all">
+                                        <i class="bi bi-grid-3x3-gap me-2"></i>ALL
+                                    </button>
+                                    <button class="branch-btn" data-branch="en">
+                                        <i class="bi bi-translate me-2"></i>EN
+                                    </button>
+                                    <button class="branch-btn" data-branch="jp">
+                                        <i class="bi bi-flag me-2"></i>JP
+                                    </button>
+                                    <button class="branch-btn" data-branch="id">
+                                        <i class="bi bi-tropical-storm me-2"></i>ID
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Group Info Section (will be populated when subgroup selected) -->
-            <div class="row mb-5 d-none" id="groupInfoSection">
-                <div class="col-12">
-                    <div class="group-info-card bg-primary bg-opacity-10 rounded-3 p-4 border-start border-4 border-primary">
-                        <h3 class="text-white mb-3" id="groupTitle"></h3>
-                        <p class="text-muted mb-0" id="groupDescription"></p>
+            <!-- Subgroup Selection (Hidden by default) -->
+            <div class="subgroup-selection bg-primary bg-opacity-10 border-bottom border-primary d-none" id="subgroupSection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="subgroup-menu py-3">
+                                <div class="d-flex justify-content-center flex-wrap gap-2" id="subgroupButtons">
+                                    <!-- Subgroup buttons will be populated here -->
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Talents Grid -->
+            <!-- Group Info Section -->
+            <div class="group-info-section bg-dark border-bottom border-secondary d-none" id="groupInfoSection">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="group-info py-4">
+                                <h3 class="text-white mb-2" id="groupTitle"></h3>
+                                <p class="text-muted mb-0" id="groupDescription"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Talents Grid -->
+        <div class="container py-5 mt-3">
             <div class="row" id="talentsContainer">
                 <!-- Talents will be loaded here by JavaScript -->
             </div>
@@ -128,7 +117,7 @@
                 <div class="col-12 text-center py-5">
                     <i class="bi bi-search display-1 text-muted mb-3"></i>
                     <h3 class="text-white">Таланты не найдены</h3>
-                    <p class="text-muted">Попробуйте изменить параметры фильтра</p>
+                    <p class="text-muted">Попробуйте выбрать другую категорию</p>
                 </div>
             </div>
         </div>

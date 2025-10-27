@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Subgroups data structure
     const subgroups = {
-        'all': [],
         'en': [
             { value: 'myth', name: 'Myth', description: 'hololive English -Myth- - первое поколение английского подразделения' },
             { value: 'hope', name: 'Project: HOPE', description: 'Сольный проект ИРЫ' },
@@ -32,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой. В случае holoMyth, таланты этой группы являются мифологическими существами и детективом, который расследует дело этих мифов. Отсюда и пошло название -Myth-.`
     };
 
-    // Sample talents data (will be expanded)
+    // Sample talents data
     const talents = [
         {
             id: 1,
@@ -88,24 +87,50 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#4f46e5", "#ffffff", "#dc2626"],
             description: "Виртуальная ютуберша, часть первого поколения hololive English",
             page: "gawr-gura.html"
+        },
+        // Добавим несколько JP талантов для демонстрации
+        {
+            id: 6,
+            name: "Usada Pekora",
+            group: "JP - Gen 3",
+            subgroup: "gen3",
+            branch: "jp",
+            image: "../images/talents/usada-pekora/avatar.jpg",
+            colors: ["#dc2626", "#ffffff", "#fbbf24"],
+            description: "Японская витуберша, часть 3-го поколения hololive JP",
+            page: "usada-pekora.html"
+        },
+        {
+            id: 7,
+            name: "Shirakami Fubuki",
+            group: "JP - Gen 1",
+            subgroup: "gen1",
+            branch: "jp",
+            image: "../images/talents/shirakami-fubuki/avatar.jpg",
+            colors: ["#ffffff", "#3b82f6", "#ef4444"],
+            description: "Японская витуберша, часть 1-го поколения hololive JP",
+            page: "shirakami-fubuki.html"
         }
     ];
 
     // DOM Elements
-    const mainBranchFilter = document.getElementById('mainBranchFilter');
-    const subgroupFilter = document.getElementById('subgroupFilter');
-    const resetFilters = document.getElementById('resetFilters');
-    const quickFilters = document.querySelectorAll('.quick-filter');
+    const branchButtons = document.querySelectorAll('.branch-btn');
+    const subgroupSection = document.getElementById('subgroupSection');
+    const subgroupButtons = document.getElementById('subgroupButtons');
     const talentsContainer = document.getElementById('talentsContainer');
     const emptyState = document.getElementById('emptyState');
     const groupInfoSection = document.getElementById('groupInfoSection');
     const groupTitle = document.getElementById('groupTitle');
     const groupDescription = document.getElementById('groupDescription');
 
-    // Initialize filters
-    function initializeFilters() {
-        updateSubgroupFilter();
+    // Current filters
+    let currentBranch = 'all';
+    let currentSubgroup = 'all';
+
+    // Initialize
+    function initialize() {
         displayTalents(talents);
+        setupEventListeners();
         
         // Check URL parameters
         const urlParams = new URLSearchParams(window.location.search);
@@ -113,28 +138,166 @@ document.addEventListener('DOMContentLoaded', function() {
         const subgroup = urlParams.get('subgroup');
         
         if (branch) {
-            mainBranchFilter.value = branch;
-            updateSubgroupFilter();
+            selectBranch(branch);
             if (subgroup) {
-                subgroupFilter.value = subgroup;
+                selectSubgroup(subgroup);
             }
-            filterTalents();
         }
     }
 
-    // Update subgroup filter based on main branch selection
-    function updateSubgroupFilter() {
-        const selectedBranch = mainBranchFilter.value;
-        const subgroupsList = subgroups[selectedBranch] || [];
-        
-        subgroupFilter.innerHTML = '<option value="all">Все подгруппы</option>';
-        
-        subgroupsList.forEach(subgroup => {
-            const option = document.createElement('option');
-            option.value = subgroup.value;
-            option.textContent = subgroup.name;
-            subgroupFilter.appendChild(option);
+    // Setup event listeners
+    function setupEventListeners() {
+        branchButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const branch = this.dataset.branch;
+                selectBranch(branch);
+            });
         });
+    }
+
+    // Select branch
+    function selectBranch(branch) {
+        // Update active branch button
+        branchButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.branch === branch) {
+                btn.classList.add('active');
+            }
+        });
+
+        currentBranch = branch;
+        currentSubgroup = 'all';
+
+        // Show/hide subgroup section
+        if (branch !== 'all' && subgroups[branch] && subgroups[branch].length > 0) {
+            showSubgroupSection(branch);
+        } else {
+            hideSubgroupSection();
+        }
+
+        // Hide group info
+        hideGroupInfo();
+
+        // Filter talents
+        filterTalents();
+    }
+
+    // Select subgroup
+    function selectSubgroup(subgroup) {
+        // Update active subgroup button
+        const allSubgroupButtons = subgroupButtons.querySelectorAll('.subgroup-btn');
+        allSubgroupButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.subgroup === subgroup) {
+                btn.classList.add('active');
+            }
+        });
+
+        currentSubgroup = subgroup;
+
+        // Show group info if available
+        if (subgroup !== 'all' && groupDescriptions[subgroup]) {
+            showGroupInfo(currentBranch, subgroup);
+        } else {
+            hideGroupInfo();
+        }
+
+        // Filter talents
+        filterTalents();
+    }
+
+    // Show subgroup section
+    function showSubgroupSection(branch) {
+        const branchSubgroups = subgroups[branch];
+        
+        // Clear previous buttons
+        subgroupButtons.innerHTML = '';
+        
+        // Add "All" button
+        const allButton = document.createElement('button');
+        allButton.className = 'subgroup-btn active';
+        allButton.dataset.subgroup = 'all';
+        allButton.innerHTML = '<i class="bi bi-grid-3x3-gap me-1"></i>Все';
+        allButton.addEventListener('click', function() {
+            selectSubgroup('all');
+        });
+        subgroupButtons.appendChild(allButton);
+        
+        // Add subgroup buttons
+        branchSubgroups.forEach(subgroup => {
+            const button = document.createElement('button');
+            button.className = 'subgroup-btn';
+            button.dataset.subgroup = subgroup.value;
+            button.textContent = subgroup.name;
+            button.addEventListener('click', function() {
+                selectSubgroup(subgroup.value);
+            });
+            subgroupButtons.appendChild(button);
+        });
+        
+        subgroupSection.classList.remove('d-none');
+    }
+
+    // Hide subgroup section
+    function hideSubgroupSection() {
+        subgroupSection.classList.add('d-none');
+        subgroupButtons.innerHTML = '';
+    }
+
+    // Show group info
+    function showGroupInfo(branch, subgroup) {
+        const branchSubgroups = subgroups[branch];
+        const subgroupData = branchSubgroups.find(sg => sg.value === subgroup);
+        
+        if (subgroupData && groupDescriptions[subgroup]) {
+            groupTitle.textContent = `${branch.toUpperCase()} - ${subgroupData.name}`;
+            groupDescription.textContent = groupDescriptions[subgroup];
+            groupInfoSection.classList.remove('d-none');
+        }
+    }
+
+    // Hide group info
+    function hideGroupInfo() {
+        groupInfoSection.classList.add('d-none');
+    }
+
+    // Filter talents based on current selections
+    function filterTalents() {
+        let filteredTalents = talents;
+        
+        // Filter by branch
+        if (currentBranch !== 'all') {
+            filteredTalents = filteredTalents.filter(talent => talent.branch === currentBranch);
+        }
+        
+        // Filter by subgroup
+        if (currentSubgroup !== 'all') {
+            filteredTalents = filteredTalents.filter(talent => talent.subgroup === currentSubgroup);
+        }
+        
+        displayTalents(filteredTalents);
+        
+        // Update URL
+        updateURL();
+    }
+
+    // Update URL with current filters
+    function updateURL() {
+        const url = new URL(window.location);
+        
+        if (currentBranch !== 'all') {
+            url.searchParams.set('branch', currentBranch);
+            if (currentSubgroup !== 'all') {
+                url.searchParams.set('subgroup', currentSubgroup);
+            } else {
+                url.searchParams.delete('subgroup');
+            }
+        } else {
+            url.searchParams.delete('branch');
+            url.searchParams.delete('subgroup');
+        }
+        
+        window.history.replaceState({}, '', url);
     }
 
     // Display talents in grid
@@ -181,75 +344,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return col;
     }
 
-    // Filter talents based on selections
-    function filterTalents() {
-        const selectedBranch = mainBranchFilter.value;
-        const selectedSubgroup = subgroupFilter.value;
-        
-        let filteredTalents = talents;
-        
-        // Filter by branch
-        if (selectedBranch !== 'all') {
-            filteredTalents = filteredTalents.filter(talent => talent.branch === selectedBranch);
-        }
-        
-        // Filter by subgroup
-        if (selectedSubgroup !== 'all') {
-            filteredTalents = filteredTalents.filter(talent => talent.subgroup === selectedSubgroup);
-        }
-        
-        // Show/hide group info
-        if (selectedSubgroup !== 'all' && groupDescriptions[selectedSubgroup]) {
-            groupInfoSection.classList.remove('d-none');
-            groupTitle.textContent = `${selectedBranch.toUpperCase()} - ${getSubgroupName(selectedBranch, selectedSubgroup)}`;
-            groupDescription.textContent = groupDescriptions[selectedSubgroup];
-        } else {
-            groupInfoSection.classList.add('d-none');
-        }
-        
-        displayTalents(filteredTalents);
-    }
-
-    // Get subgroup name by value
-    function getSubgroupName(branch, subgroupValue) {
-        const branchSubgroups = subgroups[branch] || [];
-        const subgroup = branchSubgroups.find(sg => sg.value === subgroupValue);
-        return subgroup ? subgroup.name : subgroupValue;
-    }
-
-    // Event Listeners
-    mainBranchFilter.addEventListener('change', function() {
-        updateSubgroupFilter();
-        filterTalents();
-    });
-
-    subgroupFilter.addEventListener('change', filterTalents);
-
-    resetFilters.addEventListener('click', function() {
-        mainBranchFilter.value = 'all';
-        updateSubgroupFilter();
-        filterTalents();
-        groupInfoSection.classList.add('d-none');
-    });
-
-    quickFilters.forEach(button => {
-        button.addEventListener('click', function() {
-            const branch = this.dataset.branch;
-            const subgroup = this.dataset.subgroup;
-            
-            mainBranchFilter.value = branch;
-            updateSubgroupFilter();
-            subgroupFilter.value = subgroup;
-            filterTalents();
-            
-            // Update URL
-            const url = new URL(window.location);
-            url.searchParams.set('branch', branch);
-            url.searchParams.set('subgroup', subgroup);
-            window.history.pushState({}, '', url);
-        });
-    });
-
-    // Initialize
-    initializeFilters();
+    // Initialize the page
+    initialize();
 });
