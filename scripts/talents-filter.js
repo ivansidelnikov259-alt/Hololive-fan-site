@@ -1,5 +1,7 @@
 // Talent filtering and data management
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('✅ talents-filter.js loaded!');
+
     // Subgroups data structure
     const subgroups = {
         'en': [
@@ -294,13 +296,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const groupTitle = document.getElementById('groupTitle');
     const groupDescription = document.getElementById('groupDescription');
 
+    console.log('DOM Elements:', {
+        branchButtons: branchButtons.length,
+        talentsContainer: !!talentsContainer,
+        emptyState: !!emptyState
+    });
+
     // Current filters
     let currentBranch = 'all';
     let currentSubgroup = 'all';
 
     // Initialize
     function initialize() {
-        console.log('Initializing talents page...');
+        console.log('🚀 Initializing talents page...');
         console.log('Total talents:', talents.length);
         
         displayTalents(talents);
@@ -322,6 +330,7 @@ document.addEventListener('DOMContentLoaded', function() {
         branchButtons.forEach(button => {
             button.addEventListener('click', function() {
                 const branch = this.dataset.branch;
+                console.log('Branch clicked:', branch);
                 selectBranch(branch);
             });
         });
@@ -443,7 +452,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Filter talents based on current selections
     function filterTalents() {
-        console.log('Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
+        console.log('🔍 Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
         
         let filteredTalents = talents;
         
@@ -463,6 +472,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display talents in grid
     function displayTalents(talentsToShow) {
+        console.log('🎨 Displaying talents:', talentsToShow.length);
+        
+        if (!talentsContainer) {
+            console.error('❌ talentsContainer not found!');
+            return;
+        }
+        
         talentsContainer.innerHTML = '';
         
         if (talentsToShow.length === 0) {
@@ -479,6 +495,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 const talentCard = createTalentCard(talent);
                 talentsContainer.appendChild(talentCard);
             });
+
+            console.log('✅ Successfully displayed', talentsToShow.length, 'talents');
         }
     }
 
@@ -487,8 +505,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const col = document.createElement('div');
         col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
         
-        // ИСПРАВЛЕННЫЙ ПУТЬ - используем относительный путь от текущей директории
-        const talentPagePath = `pages/talents/${talent.page}`;
+        // ИСПРАВЛЕННЫЙ ПУТЬ - правильный относительный путь
+        const talentPagePath = `talents/${talent.page}`;
         
         col.innerHTML = `
             <div class="talent-card h-100">
