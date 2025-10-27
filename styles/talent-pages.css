@@ -663,3 +663,81 @@
         padding-left: 1rem;
     }
 }
+/* Kronii Theme */
+.kronii-theme {
+    background: linear-gradient(135deg, #4169E1 0%, #87CEEB 50%, #0f172a 100%);
+}
+
+/* Kronii specific accent colors */
+.kronii-accent {
+    color: #FFD700 !important;
+}
+
+.kronii-border {
+    border-color: #4169E1 !important;
+}
+
+/* Enhanced timeline for Kronii */
+.timeline-year h4 {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-year h4::before {
+    content: '⏰';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+/* Special styling for Kronii's content cards */
+.kronii-content-card {
+    background: rgba(30, 41, 59, 0.7);
+    border-left: 4px solid #4169E1;
+    border-right: 1px solid #4169E1;
+    border-top: 1px solid #4169E1;
+    border-bottom: 1px solid #4169E1;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.kronii-content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, transparent 50%, #4169E1 50%);
+    border-radius: 0 10px 0 0;
+}
+
+/* Golden accents for important elements */
+.kronii-gold {
+    color: #FFD700;
+    font-weight: 600;
+}
+
+/* Timeline enhancements for Kronii */
+.timeline-content p strong {
+    color: #FFD700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .timeline-year h4 {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-year h4::before {
+        font-size: 1rem;
+    }
+    
+    .kronii-content-card::before {
+        width: 30px;
+        height: 30px;
+    }
+}
