@@ -1,6 +1,6 @@
 // Talent filtering and data management
 document.addEventListener('DOMContentLoaded', function() {
-    // Subgroups data structure - ОБНОВЛЕНО С ВСЕМИ ПОКОЛЕНИЯМИ
+    // Subgroups data structure
     const subgroups = {
         'en': [
             { value: 'myth', name: 'Myth' },
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой. В случае holoMyth, таланты этой группы являются мифологическими существами и детективом, который расследует дело этих мифов. Отсюда и пошло название -Myth-.`
     };
 
-    // Sample talents data - ИСПРАВЛЕНЫ ПУТИ К СТРАНИЦАМ
+    // Sample talents data
     const talents = [
         {
             id: 1,
@@ -125,8 +125,18 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#8b5cf6", "#ec4899", "#f59e0b"],
             description: "Индонезийская витуберша, часть Zone 15 hololive ID",
             page: "moona-hoshinova.html"
+        },
+        {
+            id: 9,
+            name: "IRyS",
+            group: "EN - Project: HOPE",
+            subgroup: "hope",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/8B0000/000000?text=IRyS",
+            colors: ["#8B0000", "#000000", "#FFFFFF"],
+            description: "Англоязычная виртуальная певица, член английской ветви hololive в рамках Project HOPE",
+            page: "irys.html"
         }
-        // В массиве talents добавьте эту карточку:
     ];
 
     // DOM Elements
@@ -169,7 +179,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Select branch - ИСПРАВЛЕННАЯ ЛОГИКА
+    // Select branch
     function selectBranch(branch) {
         console.log('Selecting branch:', branch);
         
@@ -184,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentBranch = branch;
         currentSubgroup = 'all';
 
-        // Show/hide subgroup section - ИСПРАВЛЕННАЯ ЛОГИКА
+        // Show/hide subgroup section
         if (branch !== 'all' && subgroups[branch] && subgroups[branch].length > 0) {
             showSubgroupSection(branch);
         } else {
@@ -198,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
         filterTalents();
     }
 
-    // Select subgroup - ИСПРАВЛЕННАЯ ЛОГИКА
+    // Select subgroup
     function selectSubgroup(subgroup) {
         console.log('Selecting subgroup:', subgroup);
         
@@ -225,45 +235,39 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Show subgroup section
-    // В функции showSubgroupSection добавьте:
-function showSubgroupSection(branch) {
-    const branchSubgroups = subgroups[branch];
-    
-    // Clear previous buttons
-    subgroupButtons.innerHTML = '';
-    
-    // Add "All" button
-    const allButton = document.createElement('button');
-    allButton.className = 'subgroup-btn active';
-    allButton.dataset.subgroup = 'all';
-    allButton.innerHTML = '<i class="bi bi-grid-3x3-gap me-1"></i>Все';
-    allButton.addEventListener('click', function() {
-        selectSubgroup('all');
-    });
-    subgroupButtons.appendChild(allButton);
-    
-    // Add subgroup buttons
-    branchSubgroups.forEach(subgroup => {
-        const button = document.createElement('button');
-        button.className = 'subgroup-btn';
-        button.dataset.subgroup = subgroup.value;
-        button.textContent = subgroup.name;
-        button.addEventListener('click', function() {
-            selectSubgroup(subgroup.value);
+    function showSubgroupSection(branch) {
+        const branchSubgroups = subgroups[branch];
+        
+        // Clear previous buttons
+        subgroupButtons.innerHTML = '';
+        
+        // Add "All" button
+        const allButton = document.createElement('button');
+        allButton.className = 'subgroup-btn active';
+        allButton.dataset.subgroup = 'all';
+        allButton.innerHTML = '<i class="bi bi-grid-3x3-gap me-1"></i>Все';
+        allButton.addEventListener('click', function() {
+            selectSubgroup('all');
         });
-        subgroupButtons.appendChild(button);
-    });
-    
-    // Показываем подменю с анимацией
-    subgroupSection.classList.remove('d-none');
-    
-    // Прокручиваем к подменю для мобильных устройств
-    if (window.innerWidth < 768) {
-        subgroupSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        subgroupButtons.appendChild(allButton);
+        
+        // Add subgroup buttons
+        branchSubgroups.forEach(subgroup => {
+            const button = document.createElement('button');
+            button.className = 'subgroup-btn';
+            button.dataset.subgroup = subgroup.value;
+            button.textContent = subgroup.name;
+            button.addEventListener('click', function() {
+                selectSubgroup(subgroup.value);
+            });
+            subgroupButtons.appendChild(button);
+        });
+        
+        // Показываем подменю
+        subgroupSection.classList.remove('d-none');
+        
+        console.log('Subgroup section shown for branch:', branch);
     }
-    
-    console.log('Subgroup section shown for branch:', branch);
-}
 
     // Hide subgroup section
     function hideSubgroupSection() {
@@ -289,7 +293,7 @@ function showSubgroupSection(branch) {
         groupInfoSection.classList.add('d-none');
     }
 
-    // Filter talents based on current selections - ИСПРАВЛЕННАЯ ЛОГИКА
+    // Filter talents based on current selections
     function filterTalents() {
         console.log('Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
         
@@ -327,12 +331,12 @@ function showSubgroupSection(branch) {
         }
     }
 
-    // Create talent card HTML - ИСПРАВЛЕН ПУТЬ К СТРАНИЦАМ
+    // Create talent card HTML
     function createTalentCard(talent) {
         const col = document.createElement('div');
         col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
         
-        // ИСПРАВЛЕННЫЙ ПУТЬ - правильная структура папок
+        // Используем правильный путь к страницам талантов
         const talentPagePath = `../pages/talents/${talent.page}`;
         
         col.innerHTML = `
