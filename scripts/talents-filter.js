@@ -3,25 +3,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Subgroups data structure
     const subgroups = {
         'en': [
-            { value: 'myth', name: 'Myth', description: 'hololive English -Myth- - первое поколение английского подразделения' },
-            { value: 'hope', name: 'Project: HOPE', description: 'Сольный проект ИРЫ' },
-            { value: 'council', name: 'Council', description: 'Второе поколение английского подразделения' },
-            { value: 'promise', name: 'Promise', description: 'Третье поколение английского подразделения' },
-            { value: 'advent', name: 'Advent', description: 'Четвертое поколение английского подразделения' },
-            { value: 'justice', name: 'Justice', description: 'Пятое поколение английского подразделения' }
+            { value: 'myth', name: 'Myth' },
+            { value: 'hope', name: 'Project: HOPE' },
+            { value: 'council', name: 'Council' },
+            { value: 'promise', name: 'Promise' },
+            { value: 'advent', name: 'Advent' },
+            { value: 'justice', name: 'Justice' }
         ],
         'jp': [
-            { value: 'gen0', name: 'Gen 0', description: 'Нулевое поколение японского подразделения' },
-            { value: 'gen1', name: 'Gen 1', description: 'Первое поколение японского подразделения' },
-            { value: 'gen2', name: 'Gen 2', description: 'Второе поколение японского подразделения' },
-            { value: 'gamers', name: 'GAMERS', description: 'Игровое подразделение' },
-            { value: 'gen3', name: 'Gen 3', description: 'Третье поколение японского подразделения' },
-            { value: 'gen4', name: 'Gen 4', description: 'Четвертое поколение японского подразделения' },
-            { value: 'gen5', name: 'Gen 5', description: 'Пятое поколение японского подразделения' },
-            { value: 'holox', name: 'holoX', description: 'Шестое поколение японского подразделения' },
-            { value: 'regloss', name: 'ReGLOSS', description: 'DEV_IS подразделение' },
-            { value: 'flowglow', name: 'FLOW GLOW', description: 'DEV_IS подразделение' },
-            { value: 'holoan', name: 'holoAN', description: 'DEV_IS подразделение' }
+            { value: 'gen0', name: 'Gen 0' },
+            { value: 'gen1', name: 'Gen 1' },
+            { value: 'gen2', name: 'Gen 2' },
+            { value: 'gamers', name: 'GAMERS' },
+            { value: 'gen3', name: 'Gen 3' },
+            { value: 'gen4', name: 'Gen 4' },
+            { value: 'gen5', name: 'Gen 5' },
+            { value: 'holox', name: 'holoX' },
+            { value: 'regloss', name: 'ReGLOSS' },
+            { value: 'flowglow', name: 'FLOW GLOW' },
+            { value: 'holoan', name: 'holoAN' }
         ],
         'id': []
     };
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
             group: "EN - Myth",
             subgroup: "myth",
             branch: "en",
-            image: "../images/talents/mori-calliope/avatar.jpg",
+            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Mori+Calliope",
             colors: ["#000000", "#ec4899", "#dc2626"],
             description: "Англоговорящая виртуальная ютуберша, часть первого поколения hololive English",
             page: "mori-calliope.html"
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
             group: "EN - Myth",
             subgroup: "myth",
             branch: "en",
-            image: "../images/talents/takanashi-kiara/avatar.jpg",
+            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Takanashi+Kiara",
             colors: ["#f59e0b", "#60a5fa", "#2563eb"],
             description: "Англоговорящая витуберша, часть 1-го поколения hololive EN",
             page: "takanashi-kiara.html"
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function() {
             group: "EN - Myth",
             subgroup: "myth",
             branch: "en",
-            image: "../images/talents/ninomae-inanis/avatar.jpg",
+            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Ninomae+Ina'nis",
             colors: ["#8b5cf6", "#f59e0b", "#ffffff"],
             description: "Англоговорящая виртуальная ютуберша, часть первого поколения hololive English",
             page: "ninomae-inanis.html"
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
             group: "EN - Myth",
             subgroup: "myth",
             branch: "en",
-            image: "../images/talents/watson-amelia/avatar.jpg",
+            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Watson+Amelia",
             colors: ["#fbbf24", "#60a5fa", "#f59e0b"],
             description: "Витуберша, часть первого поколения hololive English",
             page: "watson-amelia.html"
@@ -83,33 +83,21 @@ document.addEventListener('DOMContentLoaded', function() {
             group: "EN - Myth",
             subgroup: "myth",
             branch: "en",
-            image: "../images/talents/gawr-gura/avatar.jpg",
+            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Gawr+Gura",
             colors: ["#4f46e5", "#ffffff", "#dc2626"],
             description: "Виртуальная ютуберша, часть первого поколения hololive English",
             page: "gawr-gura.html"
         },
-        // Добавим несколько JP талантов для демонстрации
         {
             id: 6,
             name: "Usada Pekora",
             group: "JP - Gen 3",
             subgroup: "gen3",
             branch: "jp",
-            image: "../images/talents/usada-pekora/avatar.jpg",
+            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Usada+Pekora",
             colors: ["#dc2626", "#ffffff", "#fbbf24"],
             description: "Японская витуберша, часть 3-го поколения hololive JP",
             page: "usada-pekora.html"
-        },
-        {
-            id: 7,
-            name: "Shirakami Fubuki",
-            group: "JP - Gen 1",
-            subgroup: "gen1",
-            branch: "jp",
-            image: "../images/talents/shirakami-fubuki/avatar.jpg",
-            colors: ["#ffffff", "#3b82f6", "#ef4444"],
-            description: "Японская витуберша, часть 1-го поколения hololive JP",
-            page: "shirakami-fubuki.html"
         }
     ];
 
@@ -131,18 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function initialize() {
         displayTalents(talents);
         setupEventListeners();
-        
-        // Check URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const branch = urlParams.get('branch');
-        const subgroup = urlParams.get('subgroup');
-        
-        if (branch) {
-            selectBranch(branch);
-            if (subgroup) {
-                selectSubgroup(subgroup);
-            }
-        }
     }
 
     // Setup event listeners
@@ -276,28 +252,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         displayTalents(filteredTalents);
-        
-        // Update URL
-        updateURL();
-    }
-
-    // Update URL with current filters
-    function updateURL() {
-        const url = new URL(window.location);
-        
-        if (currentBranch !== 'all') {
-            url.searchParams.set('branch', currentBranch);
-            if (currentSubgroup !== 'all') {
-                url.searchParams.set('subgroup', currentSubgroup);
-            } else {
-                url.searchParams.delete('subgroup');
-            }
-        } else {
-            url.searchParams.delete('branch');
-            url.searchParams.delete('subgroup');
-        }
-        
-        window.history.replaceState({}, '', url);
     }
 
     // Display talents in grid
@@ -324,8 +278,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         col.innerHTML = `
             <div class="talent-card h-100">
-                <img src="${talent.image}" alt="${talent.name}" class="talent-image" 
-                     onerror="this.src='https://via.placeholder.com/400x300/1e293b/94a3b8?text=${encodeURIComponent(talent.name)}'">
+                <img src="${talent.image}" alt="${talent.name}" class="talent-image">
                 <div class="talent-info">
                     <h3 class="talent-name">${talent.name}</h3>
                     <p class="talent-group">${talent.group}</p>
