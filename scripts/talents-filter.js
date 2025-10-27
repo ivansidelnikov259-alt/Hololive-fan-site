@@ -138,6 +138,62 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Англоязычная виртуальная певица, член английской ветви hololive в рамках Project HOPE",
             page: "irys.html"
         }
+        // Council Members - Базовые карточки
+{
+    id: 10,
+    name: "Tsukumo Sana",
+    group: "EN - Council", 
+    subgroup: "council",
+    branch: "en",
+    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Tsukumo+Sana",
+    colors: ["#8B4513", "#FFD700", "#FFFFFF"],
+    description: "Астрономический советник • Speaker of Space",
+    page: "tsukumo-sana.html"
+},
+{
+    id: 11,
+    name: "Ceres Fauna",
+    group: "EN - Council",
+    subgroup: "council", 
+    branch: "en",
+    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Ceres+Fauna",
+    colors: ["#228B22", "#90EE90", "#FFFFFF"],
+    description: "Хранительница природы • Keeper of Nature",
+    page: "ceres-fauna.html"
+},
+{
+    id: 12, 
+    name: "Ouro Kronii",
+    group: "EN - Council",
+    subgroup: "council",
+    branch: "en",
+    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Ouro+Kronii",
+    colors: ["#4169E1", "#87CEEB", "#FFFFFF"],
+    description: "Воплощение времени • Warden of Time",
+    page: "ouro-kronii.html"
+},
+{
+    id: 13,
+    name: "Nanashi Mumei",
+    group: "EN - Council", 
+    subgroup: "council",
+    branch: "en",
+    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Nanashi+Mumei",
+    colors: ["#8B4513", "#D2B48C", "#FFFFFF"],
+    description: "Хранительница цивилизации • Guardian of Civilization",
+    page: "nanashi-mumei.html"
+},
+{
+    id: 14,
+    name: "Hakos Baelz",
+    group: "EN - Council",
+    subgroup: "council",
+    branch: "en",
+    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Hakos+Baelz",
+    colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
+    description: "Воплощение хаоса • Chaos",
+    page: "hakos-baelz.html"
+}
     ];
 
     // DOM Elements
