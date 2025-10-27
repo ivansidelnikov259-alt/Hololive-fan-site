@@ -127,17 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
             page: "moona-hoshinova.html"
         }
         // В массиве talents добавьте эту карточку:
-        {
-            id: 9,
-            name: "IRyS",
-            group: "EN - Project: HOPE", 
-            subgroup: "hope",
-            branch: "en",
-            image: "https://via.placeholder.com/400x300/8B0000/000000?text=IRyS",
-            colors: ["#8B0000", "#000000", "#FFFFFF"],
-            description: "Англоязычная виртуальная певица, член английской ветви hololive в рамках Project HOPE",
-            page: "irys.html"
-        }
     ];
 
     // DOM Elements
