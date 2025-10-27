@@ -741,3 +741,110 @@
         height: 30px;
     }
 }
+/* Sana Theme */
+.sana-theme {
+    background: linear-gradient(135deg, #8B4513 0%, #FFD700 50%, #0f172a 100%);
+}
+
+/* Legacy Grid */
+.legacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.legacy-item {
+    background: rgba(30, 41, 59, 0.7);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.legacy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(139, 69, 19, 0.3);
+}
+
+.legacy-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Special styling for retirement section */
+.retirement-section {
+    background: rgba(139, 0, 0, 0.1);
+    border: 2px solid #8B0000;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.retirement-section h2 {
+    color: #8B0000;
+}
+
+/* Cosmic accents for Sana */
+.cosmic-accent {
+    color: #FFD700 !important;
+}
+
+.cosmic-border {
+    border-color: #8B4513 !important;
+}
+
+/* Enhanced timeline for Sana */
+.timeline-year h4 {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline-year h4::before {
+    content: '🌌';
+    position: absolute;
+    left: 0;
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+/* Special retirement notice */
+.retirement-notice {
+    background: linear-gradient(135deg, rgba(139, 0, 0, 0.2), rgba(139, 69, 19, 0.2));
+    border: 2px solid #8B0000;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    position: relative;
+}
+
+.retirement-notice::before {
+    content: '⭐';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #0f172a;
+    padding: 0 10px;
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .legacy-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline-year h4 {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-year h4::before {
+        font-size: 1rem;
+    }
+    
+    .retirement-notice {
+        padding: 1rem;
+    }
+}
