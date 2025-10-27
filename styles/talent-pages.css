@@ -589,79 +589,77 @@
     background: linear-gradient(135deg, #DC143C 0%, #FF69B4 50%, #0f172a 100%);
 }
 
-/* Appearance Details */
-.appearance-details {
+/* History Subsection */
+.history-subsection {
+    margin-bottom: 2rem;
+}
+
+.history-subsection h4 {
+    font-weight: 600;
+}
+
+/* Detailed Timeline */
+.detailed-timeline {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    gap: 2rem;
 }
 
-.appearance-feature {
-    background: rgba(30, 41, 59, 0.7);
+.timeline-year {
     border-left: 4px solid;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.timeline-year::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.timeline-content {
+    background: rgba(30, 41, 59, 0.7);
     border-radius: 10px;
     padding: 1.5rem;
-    transition: transform 0.3s ease;
+    border-left: 4px solid;
 }
 
-.appearance-feature:hover {
-    transform: translateX(5px);
+.timeline-content p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
 }
 
-/* Australian Grid */
-.australian-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.australian-item {
-    background: rgba(30, 41, 59, 0.7);
-    border: 2px solid;
-    border-radius: 15px;
-    padding: 1.5rem;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-.australian-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(220, 20, 60, 0.3);
-}
-
-.australian-icon {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-/* Discography Grid */
-.discography-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.album-item {
-    background: rgba(30, 41, 59, 0.7);
-    border: 2px solid;
-    border-radius: 15px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.album-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(220, 20, 60, 0.2);
-}
-
-.album-item ul {
-    padding-left: 1rem;
+.timeline-content p:last-child {
     margin-bottom: 0;
 }
 
-.album-item li {
-    margin-bottom: 0.25rem;
+/* Discography List */
+.discography-list ul {
+    padding-left: 1.5rem;
+    margin-bottom: 0;
+}
+
+.discography-list li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+/* Responsive adjustments for detailed timeline */
+@media (max-width: 768px) {
+    .timeline-year {
+        padding-left: 1rem;
+    }
+    
+    .timeline-content {
+        padding: 1rem;
+    }
+    
+    .discography-list ul {
+        padding-left: 1rem;
+    }
 }
