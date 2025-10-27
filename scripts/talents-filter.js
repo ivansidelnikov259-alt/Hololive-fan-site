@@ -33,7 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Group descriptions
     const groupDescriptions = {
-        'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой. В случае holoMyth, таланты этой группы являются мифологическими существами и детективом, который расследует дело этих мифов. Отсюда и пошло название -Myth-.`
+        'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой. В случае holoMyth, таланты этой группы являются мифологическими существами и детективом, который расследует дело этих мифов. Отсюда и пошло название -Myth-.`,
+        'hope': `Project: HOPE - проект виртуальных певцов, который фокусируется на выпуске музыки и озарением всего мира надеждой. Проект был закрыт 9 октября 2023 года, и IRyS присоединилась к оставшимся активными талантами из "-Council-" и уже вместе они стали официально новой группой "hololive English -Promise-". Переводится как "Проект: НАДЕЖДА".`
     };
 
     // Sample talents data
@@ -295,7 +296,22 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Filter talents based on current selections
     function filterTalents() {
+        console.log('Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
         
+        let filteredTalents = talents;
+        
+        // Filter by branch
+        if (currentBranch !== 'all') {
+            filteredTalents = filteredTalents.filter(talent => talent.branch === currentBranch);
+        }
+        
+        // Filter by subgroup
+        if (currentSubgroup !== 'all') {
+            filteredTalents = filteredTalents.filter(talent => talent.subgroup === currentSubgroup);
+        }
+        
+        console.log('Filtered talents count:', filteredTalents.length);
+        displayTalents(filteredTalents);
     }
 
     // Display talents in grid
