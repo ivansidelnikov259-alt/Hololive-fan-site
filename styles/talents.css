@@ -2,16 +2,15 @@
 .talents-page {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     min-height: 100vh;
+    padding-top: 80px; /* Отступ для фиксированного навбара */
 }
 
-/* Branch Selection Styles - ИСПРАВЛЕНО ПОЗИЦИОНИРОВАНИЕ */
+/* Branch Selection Styles - УБРАН STICKY */
 .branch-selection {
-    position: sticky;
-    top: 76px;
-    z-index: 100;
-    backdrop-filter: blur(10px);
     background: rgba(15, 23, 42, 0.98);
     border-bottom: 1px solid #334155;
+    position: relative; /* Убрано sticky */
+    z-index: 10;
 }
 
 .branch-btn {
@@ -40,15 +39,12 @@
     box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
 }
 
-/* Subgroup Selection Styles - ИСПРАВЛЕНО ПОЗИЦИОНИРОВАНИЕ */
+/* Subgroup Selection Styles - УБРАН STICKY */
 .subgroup-selection {
-    position: sticky;
-    top: 140px; /* Располагается ПОД основным меню */
-    z-index: 99; /* Ниже основного меню */
-    backdrop-filter: blur(10px);
     background: rgba(30, 41, 59, 0.95);
     border-bottom: 1px solid #4f46e5;
-    padding: 1rem 0;
+    position: relative; /* Убрано sticky */
+    z-index: 9;
 }
 
 .subgroup-btn {
@@ -79,7 +75,6 @@
 
 /* Group Info Section */
 .group-info-section {
-    backdrop-filter: blur(10px);
     background: rgba(30, 41, 59, 0.9);
     border-bottom: 1px solid #334155;
 }
@@ -158,19 +153,17 @@
     font-weight: 600;
 }
 
-/* Контейнер для талантов - ИСПРАВЛЕНО ДЛЯ ALL */
-.talents-container-wrapper {
-    margin-top: 0;
+/* Контейнер для контента */
+.talents-content {
     padding-top: 2rem;
-}
-
-/* Исправление отступов для разных состояний */
-.branch-selection:has(+ .subgroup-selection:not(.d-none)) + .talents-container-wrapper {
-    margin-top: 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .talents-page {
+        padding-top: 70px;
+    }
+    
     .branch-btn {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
@@ -185,15 +178,7 @@
         margin-bottom: 1.5rem;
     }
     
-    .branch-selection {
-        top: 70px;
-    }
-    
-    .subgroup-selection {
-        top: 130px;
-    }
-    
-    .talents-container-wrapper {
+    .talents-content {
         padding-top: 1rem;
     }
 }
@@ -217,23 +202,7 @@
         font-size: 0.75rem;
     }
     
-    .talents-container-wrapper {
+    .talents-content {
         padding-top: 0.5rem;
-    }
-}
-
-/* Анимация появления подменю */
-.subgroup-selection {
-    animation: slideDown 0.3s ease-out;
-}
-
-@keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
