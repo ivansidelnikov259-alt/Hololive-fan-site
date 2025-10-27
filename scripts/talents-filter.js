@@ -33,12 +33,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Group descriptions
     const groupDescriptions = {
-        'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой. В случае holoMyth, таланты этой группы являются мифологическими существами и детективом, который расследует дело этих мифов. Отсюда и пошло название -Myth-.`,
-        'hope': `Project: HOPE - проект виртуальных певцов, который фокусируется на выпуске музыки и озарением всего мира надеждой. Проект был закрыт 9 октября 2023 года, и IRyS присоединилась к оставшимся активными талантами из "-Council-" и уже вместе они стали официально новой группой "hololive English -Promise-". Переводится как "Проект: НАДЕЖДА".`
+        'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой.`,
+        'hope': `Project: HOPE - проект виртуальных певцов, который фокусируется на выпуске музыки и озарением всего мира надеждой.`,
+        'council': `hololive English -Council- - второе поколение hololive English, также известное как holoCouncil. Эта группа представляет собой совет концепций, где каждый член олицетворяет фундаментальную концепцию существования.`
     };
 
-    // Sample talents data
+    // Complete talents data
     const talents = [
+        // Myth
         {
             id: 1,
             name: "Mori Calliope",
@@ -94,8 +96,80 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Виртуальная ютуберша, часть первого поколения hololive English",
             page: "gawr-gura.html"
         },
+        
+        // Project: HOPE
         {
             id: 6,
+            name: "IRyS",
+            group: "EN - Project: HOPE",
+            subgroup: "hope",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/8B0000/000000?text=IRyS",
+            colors: ["#8B0000", "#000000", "#FFFFFF"],
+            description: "Англоязычная виртуальная певица, член английской ветви hololive в рамках Project HOPE",
+            page: "irys.html"
+        },
+        
+        // Council
+        {
+            id: 7,
+            name: "Tsukumo Sana",
+            group: "EN - Council", 
+            subgroup: "council",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/8B4513/FFD700?text=Tsukumo+Sana",
+            colors: ["#8B4513", "#FFD700", "#FFFFFF"],
+            description: "Астрономический советник • Speaker of Space",
+            page: "tsukumo-sana.html"
+        },
+        {
+            id: 8,
+            name: "Ceres Fauna",
+            group: "EN - Council",
+            subgroup: "council", 
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/228B22/90EE90?text=Ceres+Fauna",
+            colors: ["#228B22", "#90EE90", "#FFFFFF"],
+            description: "Хранительница природы • Keeper of Nature",
+            page: "ceres-fauna.html"
+        },
+        {
+            id: 9, 
+            name: "Ouro Kronii",
+            group: "EN - Council",
+            subgroup: "council",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/4169E1/87CEEB?text=Ouro+Kronii",
+            colors: ["#4169E1", "#87CEEB", "#FFFFFF"],
+            description: "Воплощение времени • Warden of Time",
+            page: "ouro-kronii.html"
+        },
+        {
+            id: 10,
+            name: "Nanashi Mumei",
+            group: "EN - Council", 
+            subgroup: "council",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/8B4513/D2B48C?text=Nanashi+Mumei",
+            colors: ["#8B4513", "#D2B48C", "#FFFFFF"],
+            description: "Хранительница цивилизации • Guardian of Civilization",
+            page: "nanashi-mumei.html"
+        },
+        {
+            id: 11,
+            name: "Hakos Baelz",
+            group: "EN - Council",
+            subgroup: "council",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/DC143C/FF69B4?text=Hakos+Baelz",
+            colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
+            description: "Воплощение хаоса • Chaos",
+            page: "hakos-baelz.html"
+        },
+        
+        // JP Examples
+        {
+            id: 12,
             name: "Usada Pekora",
             group: "JP - Gen 3",
             subgroup: "gen3",
@@ -106,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
             page: "usada-pekora.html"
         },
         {
-            id: 7,
+            id: 13,
             name: "Hoshimachi Suisei",
             group: "JP - Gen 0",
             subgroup: "gen0",
@@ -116,8 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
             description: "Японская витуберша, часть 0-го поколения hololive JP",
             page: "hoshimachi-suisei.html"
         },
+        
+        // ID Examples
         {
-            id: 8,
+            id: 14,
             name: "Moona Hoshinova",
             group: "ID - Zone 15",
             subgroup: "zone15",
@@ -126,74 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#8b5cf6", "#ec4899", "#f59e0b"],
             description: "Индонезийская витуберша, часть Zone 15 hololive ID",
             page: "moona-hoshinova.html"
-        },
-        {
-            id: 9,
-            name: "IRyS",
-            group: "EN - Project: HOPE",
-            subgroup: "hope",
-            branch: "en",
-            image: "https://via.placeholder.com/400x300/8B0000/000000?text=IRyS",
-            colors: ["#8B0000", "#000000", "#FFFFFF"],
-            description: "Англоязычная виртуальная певица, член английской ветви hololive в рамках Project HOPE",
-            page: "irys.html"
         }
-        // Council Members - Базовые карточки
-{
-    id: 10,
-    name: "Tsukumo Sana",
-    group: "EN - Council", 
-    subgroup: "council",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Tsukumo+Sana",
-    colors: ["#8B4513", "#FFD700", "#FFFFFF"],
-    description: "Астрономический советник • Speaker of Space",
-    page: "tsukumo-sana.html"
-},
-{
-    id: 11,
-    name: "Ceres Fauna",
-    group: "EN - Council",
-    subgroup: "council", 
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Ceres+Fauna",
-    colors: ["#228B22", "#90EE90", "#FFFFFF"],
-    description: "Хранительница природы • Keeper of Nature",
-    page: "ceres-fauna.html"
-},
-{
-    id: 12, 
-    name: "Ouro Kronii",
-    group: "EN - Council",
-    subgroup: "council",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Ouro+Kronii",
-    colors: ["#4169E1", "#87CEEB", "#FFFFFF"],
-    description: "Воплощение времени • Warden of Time",
-    page: "ouro-kronii.html"
-},
-{
-    id: 13,
-    name: "Nanashi Mumei",
-    group: "EN - Council", 
-    subgroup: "council",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Nanashi+Mumei",
-    colors: ["#8B4513", "#D2B48C", "#FFFFFF"],
-    description: "Хранительница цивилизации • Guardian of Civilization",
-    page: "nanashi-mumei.html"
-},
-{
-    id: 14,
-    name: "Hakos Baelz",
-    group: "EN - Council",
-    subgroup: "council",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Hakos+Baelz",
-    colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
-    description: "Воплощение хаоса • Chaos",
-    page: "hakos-baelz.html"
-}
     ];
 
     // DOM Elements
@@ -212,6 +221,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize
     function initialize() {
+        console.log('Initializing talents page...');
+        console.log('Total talents:', talents.length);
+        
         displayTalents(talents);
         setupEventListeners();
         
@@ -377,9 +389,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (talentsToShow.length === 0) {
             emptyState.classList.remove('d-none');
             talentsContainer.classList.add('d-none');
+            console.log('No talents to show');
         } else {
             emptyState.classList.add('d-none');
             talentsContainer.classList.remove('d-none');
+            
+            console.log('Displaying talents:', talentsToShow.length);
             
             talentsToShow.forEach(talent => {
                 const talentCard = createTalentCard(talent);
@@ -394,7 +409,7 @@ document.addEventListener('DOMContentLoaded', function() {
         col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
         
         // Используем правильный путь к страницам талантов
-        const talentPagePath = `../pages/talents/${talent.page}`;
+        const talentPagePath = `pages/talents/${talent.page}`;
         
         col.innerHTML = `
             <div class="talent-card h-100">
