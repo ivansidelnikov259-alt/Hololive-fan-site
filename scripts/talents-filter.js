@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const groupDescriptions = {
         'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой.`,
         'hope': `Project: HOPE - проект виртуальных певцов, который фокусируется на выпуске музыки и озарением всего мира надеждой.`,
-        'council': `hololive English -Council- - второе поколение hololive English, также известное как holoCouncil. Эта группа представляет собой совет концепций, где каждый член олицетворяет фундаментальную концепцию существования.`
+        'council': `hololive English -Council- - второе поколение hololive English, также известное как holoCouncil. Эта группа представляет собой совет концепций, где каждый член олицетворяет фундаментальную концепцию существования.`,
+        'promise': `hololive English -Promise- - реорганизованная группа, включающая участниц из Council и Project: HOPE. Группа представляет собой обещание продолжать приносить радость и надежду через свое творчество.`
     };
 
     // Complete talents data
@@ -160,6 +161,63 @@ document.addEventListener('DOMContentLoaded', function() {
             name: "Hakos Baelz",
             group: "EN - Council",
             subgroup: "council",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/DC143C/FF69B4?text=Hakos+Baelz",
+            colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
+            description: "Воплощение хаоса • Chaos",
+            page: "hakos-baelz.html"
+        },
+
+        // Promise (дополнительные записи для тех же витуберов)
+        {
+            id: 12,
+            name: "IRyS",
+            group: "EN - Promise",
+            subgroup: "promise",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/8B0000/000000?text=IRyS",
+            colors: ["#8B0000", "#000000", "#FFFFFF"],
+            description: "Англоязычная виртуальная певица, член английской ветви hololive в рамках Project HOPE",
+            page: "irys.html"
+        },
+        {
+            id: 13,
+            name: "Ceres Fauna",
+            group: "EN - Promise",
+            subgroup: "promise",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/228B22/90EE90?text=Ceres+Fauna",
+            colors: ["#228B22", "#90EE90", "#FFFFFF"],
+            description: "Хранительница природы • Keeper of Nature",
+            page: "ceres-fauna.html"
+        },
+        {
+            id: 14,
+            name: "Ouro Kronii",
+            group: "EN - Promise",
+            subgroup: "promise",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/4169E1/87CEEB?text=Ouro+Kronii",
+            colors: ["#4169E1", "#87CEEB", "#FFFFFF"],
+            description: "Воплощение времени • Warden of Time",
+            page: "ouro-kronii.html"
+        },
+        {
+            id: 15,
+            name: "Nanashi Mumei",
+            group: "EN - Promise",
+            subgroup: "promise",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/8B4513/D2B48C?text=Nanashi+Mumei",
+            colors: ["#8B4513", "#D2B48C", "#FFFFFF"],
+            description: "Хранительница цивилизации • Guardian of Civilization",
+            page: "nanashi-mumei.html"
+        },
+        {
+            id: 16,
+            name: "Hakos Baelz",
+            group: "EN - Promise",
+            subgroup: "promise",
             branch: "en",
             image: "https://via.placeholder.com/400x300/DC143C/FF69B4?text=Hakos+Baelz",
             colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
