@@ -208,7 +208,28 @@ document.addEventListener('DOMContentLoaded', function() {
         // Filter talents
         filterTalents();
     }
-
+function filterTalents() {
+    console.log('Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
+    console.log('All talents:', talents); // Проверим весь массив
+    console.log('IRyS in talents:', talents.find(t => t.name === "IRyS")); // Проверим конкретно IRyS
+    
+    let filteredTalents = talents;
+    
+    // Filter by branch
+    if (currentBranch !== 'all') {
+        filteredTalents = filteredTalents.filter(talent => talent.branch === currentBranch);
+        console.log('After branch filter:', filteredTalents);
+    }
+    
+    // Filter by subgroup
+    if (currentSubgroup !== 'all') {
+        filteredTalents = filteredTalents.filter(talent => talent.subgroup === currentSubgroup);
+        console.log('After subgroup filter:', filteredTalents);
+    }
+    
+    console.log('Final filtered talents:', filteredTalents);
+    displayTalents(filteredTalents);
+}
     // Select subgroup
     function selectSubgroup(subgroup) {
         console.log('Selecting subgroup:', subgroup);
