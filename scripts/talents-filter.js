@@ -39,7 +39,8 @@ document.addEventListener('DOMContentLoaded', function() {
         'hope': `Project: HOPE - проект виртуальных певцов, который фокусируется на выпуске музыки и озарением всего мира надеждой.`,
         'council': `hololive English -Council- - второе поколение hololive English, также известное как holoCouncil. Эта группа представляет собой совет концепций, где каждый член олицетворяет фундаментальную концепцию существования.`,
         'promise': `hololive English -Promise- - реорганизованная группа, включающая участниц из Council и Project: HOPE. Группа представляет собой обещание продолжать приносить радость и надежду через свое творчество.`,
-        'advent': `hololive English -Advent- - третье поколение hololive English, дебютировавшее в 2023 году. Группа представляет собой приключение в неизведанные миры и новые истории.`
+        'advent': `hololive English -Advent- - третье поколение hololive English, дебютировавшее в 2023 году. Группа представляет собой приключение в неизведанные миры и новые истории.`,
+        'justice': `hololive English -Justice- - четвертое поколение hololive English, представляющее собой силы правосудия и порядка в виртуальном мире.`
     };
 
     // Complete talents data
@@ -283,9 +284,56 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#DB2777", "#EC4899", "#FFFFFF"],
             description: "Младший близнец-страж • Younger Twin Guardian",
             page: "mococo-abyssgard.html"
+        },
+
+        // Justice
+        {
+            id: 22,
+            name: "Elizabeth Rose Bloodflame",
+            group: "EN - Justice",
+            subgroup: "justice",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/7F1D1D/DC2626?text=Elizabeth+Rose+Bloodflame",
+            colors: ["#7F1D1D", "#DC2626", "#FECACA"],
+            description: "Аристократическая вампиресса с пламенным сердцем",
+            page: "elizabeth-rose-bloodflame.html"
+        },
+        {
+            id: 23,
+            name: "Gigi Murin",
+            group: "EN - Justice",
+            subgroup: "justice",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/065F46/059669?text=Gigi+Murin",
+            colors: ["#065F46", "#059669", "#A7F3D0"],
+            description: "Энергичная и жизнерадостная лесная фея",
+            page: "gigi-murin.html"
+        },
+        {
+            id: 24,
+            name: "Cecilia Immergreen",
+            group: "EN - Justice",
+            subgroup: "justice",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/1E40AF/3B82F6?text=Cecilia+Immergreen",
+            colors: ["#1E40AF", "#3B82F6", "#BFDBFE"],
+            description: "Мудрая хранительница вечного леса",
+            page: "cecilia-immergreen.html"
+        },
+        {
+            id: 25,
+            name: "Raora Panthera",
+            group: "EN - Justice",
+            subgroup: "justice",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/701A75/A855F7?text=Raora+Panthera",
+            colors: ["#701A75", "#A855F7", "#E9D5FF"],
+            description: "Грациозная и могущественная пантера-воительница",
+            page: "raora-panthera.html"
         }
     ];
 
+    // ... остальной код без изменений (DOM Elements, функции и т.д.)
     // DOM Elements
     const branchButtons = document.querySelectorAll('.branch-btn');
     const subgroupSection = document.getElementById('subgroupSection');
