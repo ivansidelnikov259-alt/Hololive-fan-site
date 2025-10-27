@@ -224,62 +224,64 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
             description: "Воплощение хаоса • Chaos",
             page: "hakos-baelz.html"
-        }
+        },
+
+        // Advent
         {
-    id: 17,
-    name: "Shiori Novella",
-    group: "EN - Advent",
-    subgroup: "advent",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/6B46C1/9F7AEA?text=Shiori+Novella",
-    colors: ["#6B46C1", "#9F7AEA", "#FFFFFF"],
-    description: "Архивариус забытых историй • Archiver of Forgotten Stories",
-    page: "shiori-novella.html"
-},
-{
-    id: 18,
-    name: "Koseki Bijou",
-    group: "EN - Advent", 
-    subgroup: "advent",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/059669/10B981?text=Koseki+Bijou",
-    colors: ["#059669", "#10B981", "#FFFFFF"],
-    description: "Драгоценный кристалл • Precious Gemstone",
-    page: "koseki-bijou.html"
-},
-{
-    id: 19,
-    name: "Nerissa Ravencroft",
-    group: "EN - Advent",
-    subgroup: "advent", 
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/DC2626/EF4444?text=Nerissa+Ravencroft",
-    colors: ["#DC2626", "#EF4444", "#000000"],
-    description: "Певица зари • Singer of the Dawn",
-    page: "nerissa-ravencroft.html"
-},
-{
-    id: 20,
-    name: "Fuwawa Abyssgard",
-    group: "EN - Advent",
-    subgroup: "advent",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/7C3AED/A855F7?text=Fuwawa+Abyssgard",
-    colors: ["#7C3AED", "#A855F7", "#FFFFFF"],
-    description: "Старший близнец-страж • Elder Twin Guardian",
-    page: "fuwawa-abyssgard.html"
-},
-{
-    id: 21,
-    name: "Mococo Abyssgard", 
-    group: "EN - Advent",
-    subgroup: "advent",
-    branch: "en",
-    image: "https://via.placeholder.com/400x300/DB2777/EC4899?text=Mococo+Abyssgard",
-    colors: ["#DB2777", "#EC4899", "#FFFFFF"],
-    description: "Младший близнец-страж • Younger Twin Guardian",
-    page: "mococo-abyssgard.html"
-}
+            id: 17,
+            name: "Shiori Novella",
+            group: "EN - Advent",
+            subgroup: "advent",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/6B46C1/9F7AEA?text=Shiori+Novella",
+            colors: ["#6B46C1", "#9F7AEA", "#FFFFFF"],
+            description: "Архивариус забытых историй • Archiver of Forgotten Stories",
+            page: "shiori-novella.html"
+        },
+        {
+            id: 18,
+            name: "Koseki Bijou",
+            group: "EN - Advent", 
+            subgroup: "advent",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/059669/10B981?text=Koseki+Bijou",
+            colors: ["#059669", "#10B981", "#FFFFFF"],
+            description: "Драгоценный кристалл • Precious Gemstone",
+            page: "koseki-bijou.html"
+        },
+        {
+            id: 19,
+            name: "Nerissa Ravencroft",
+            group: "EN - Advent",
+            subgroup: "advent", 
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/DC2626/EF4444?text=Nerissa+Ravencroft",
+            colors: ["#DC2626", "#EF4444", "#000000"],
+            description: "Певица зари • Singer of the Dawn",
+            page: "nerissa-ravencroft.html"
+        },
+        {
+            id: 20,
+            name: "Fuwawa Abyssgard",
+            group: "EN - Advent",
+            subgroup: "advent",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/7C3AED/A855F7?text=Fuwawa+Abyssgard",
+            colors: ["#7C3AED", "#A855F7", "#FFFFFF"],
+            description: "Старший близнец-страж • Elder Twin Guardian",
+            page: "fuwawa-abyssgard.html"
+        },
+        {
+            id: 21,
+            name: "Mococo Abyssgard", 
+            group: "EN - Advent",
+            subgroup: "advent",
+            branch: "en",
+            image: "https://via.placeholder.com/400x300/DB2777/EC4899?text=Mococo+Abyssgard",
+            colors: ["#DB2777", "#EC4899", "#FFFFFF"],
+            description: "Младший близнец-страж • Younger Twin Guardian",
+            page: "mococo-abyssgard.html"
+        }
     ];
 
     // DOM Elements
@@ -486,7 +488,7 @@ document.addEventListener('DOMContentLoaded', function() {
         col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
         
         // ИСПРАВЛЕННЫЙ ПУТЬ - используем относительный путь от текущей директории
-        const talentPagePath = `talents/${talent.page}`;
+        const talentPagePath = `pages/talents/${talent.page}`;
         
         col.innerHTML = `
             <div class="talent-card h-100">
