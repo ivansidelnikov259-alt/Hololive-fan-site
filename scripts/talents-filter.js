@@ -1,6 +1,6 @@
 // Talent filtering and data management
 document.addEventListener('DOMContentLoaded', function() {
-    // Subgroups data structure - ОБНОВЛЕНО С ВСЕМИ ПОКОЛЕНИЯМИ
+    // Subgroups data structure
     const subgroups = {
         'en': [
             { value: 'myth', name: 'Myth' },
@@ -23,11 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { value: 'flowglow', name: 'FLOW GLOW' },
             { value: 'holoan', name: 'holoAN' }
         ],
-        'id': [
-            { value: 'zone15', name: 'Zone 15' },
-            { value: 'holoro', name: 'holoro' },
-            { value: 'holoh3roes', name: 'Holoh3roes' }
-        ]
+        'id': []
     };
 
     // Group descriptions
@@ -35,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
         'myth': `hololive English -Myth- - также известное как holoMyth и неофициально известно как 1-ое поколение hololive English. Эта группа стала первой среди всех поколений hololive, которые дебютировали со своим лором и определённой тематикой. В случае holoMyth, таланты этой группы являются мифологическими существами и детективом, который расследует дело этих мифов. Отсюда и пошло название -Myth-.`
     };
 
-    // Sample talents data - ДОБАВЛЕНО БОЛЬШЕ ТАЛАНТОВ ДЛЯ ТЕСТИРОВАНИЯ
+    // Sample talents data
     const talents = [
         {
             id: 1,
@@ -102,28 +98,6 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#dc2626", "#ffffff", "#fbbf24"],
             description: "Японская витуберша, часть 3-го поколения hololive JP",
             page: "usada-pekora.html"
-        },
-        {
-            id: 7,
-            name: "Hoshimachi Suisei",
-            group: "JP - Gen 0",
-            subgroup: "gen0",
-            branch: "jp",
-            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Hoshimachi+Suisei",
-            colors: ["#3b82f6", "#ffffff", "#dc2626"],
-            description: "Японская витуберша, часть 0-го поколения hololive JP",
-            page: "hoshimachi-suisei.html"
-        },
-        {
-            id: 8,
-            name: "Moona Hoshinova",
-            group: "ID - Zone 15",
-            subgroup: "zone15",
-            branch: "id",
-            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Moona+Hoshinova",
-            colors: ["#8b5cf6", "#ec4899", "#f59e0b"],
-            description: "Индонезийская витуберша, часть Zone 15 hololive ID",
-            page: "moona-hoshinova.html"
         }
     ];
 
@@ -151,10 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (allBranchBtn) {
             allBranchBtn.classList.add('active');
         }
-        
-        // Скрываем subgroup section по умолчанию
-        hideSubgroupSection();
-        hideGroupInfo();
     }
 
     // Setup event listeners
@@ -167,10 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Select branch - ИСПРАВЛЕННАЯ ЛОГИКА
+    // Select branch
     function selectBranch(branch) {
-        console.log('Selecting branch:', branch);
-        
         // Update active branch button
         branchButtons.forEach(btn => {
             btn.classList.remove('active');
@@ -182,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentBranch = branch;
         currentSubgroup = 'all';
 
-        // Show/hide subgroup section - ИСПРАВЛЕННАЯ ЛОГИКА
+        // Show/hide subgroup section
         if (branch !== 'all' && subgroups[branch] && subgroups[branch].length > 0) {
             showSubgroupSection(branch);
         } else {
@@ -196,10 +164,8 @@ document.addEventListener('DOMContentLoaded', function() {
         filterTalents();
     }
 
-    // Select subgroup - ИСПРАВЛЕННАЯ ЛОГИКА
+    // Select subgroup
     function selectSubgroup(subgroup) {
-        console.log('Selecting subgroup:', subgroup);
-        
         currentSubgroup = subgroup;
 
         // Update active subgroup button
@@ -252,14 +218,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         subgroupSection.classList.remove('d-none');
-        console.log('Subgroup section shown for branch:', branch);
     }
 
     // Hide subgroup section
     function hideSubgroupSection() {
         subgroupSection.classList.add('d-none');
         subgroupButtons.innerHTML = '';
-        console.log('Subgroup section hidden');
     }
 
     // Show group info
@@ -279,10 +243,8 @@ document.addEventListener('DOMContentLoaded', function() {
         groupInfoSection.classList.add('d-none');
     }
 
-    // Filter talents based on current selections - ИСПРАВЛЕННАЯ ЛОГИКА
+    // Filter talents based on current selections
     function filterTalents() {
-        console.log('Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
-        
         let filteredTalents = talents;
         
         // Filter by branch
@@ -295,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function() {
             filteredTalents = filteredTalents.filter(talent => talent.subgroup === currentSubgroup);
         }
         
-        console.log('Filtered talents count:', filteredTalents.length);
         displayTalents(filteredTalents);
     }
 
@@ -305,25 +266,21 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (talentsToShow.length === 0) {
             emptyState.classList.remove('d-none');
-            talentsContainer.classList.add('d-none');
-        } else {
-            emptyState.classList.add('d-none');
-            talentsContainer.classList.remove('d-none');
-            
-            talentsToShow.forEach(talent => {
-                const talentCard = createTalentCard(talent);
-                talentsContainer.appendChild(talentCard);
-            });
+            return;
         }
+        
+        emptyState.classList.add('d-none');
+        
+        talentsToShow.forEach(talent => {
+            const talentCard = createTalentCard(talent);
+            talentsContainer.appendChild(talentCard);
+        });
     }
 
     // Create talent card HTML
     function createTalentCard(talent) {
         const col = document.createElement('div');
         col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
-        
-        // Используем правильный путь к страницам талантов
-        const talentPagePath = `pages/talents/${talent.page}`;
         
         col.innerHTML = `
             <div class="talent-card h-100">
@@ -336,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <span class="badge badge-custom bg-secondary">${talent.subgroup}</span>
                     </div>
                     <p class="text-muted small mb-3">${talent.description}</p>
-                    <a href="${talentPagePath}" class="btn btn-outline-primary w-100">
+                    <a href="talents/${talent.page}" class="btn btn-outline-primary w-100">
                         Подробнее
                     </a>
                 </div>
