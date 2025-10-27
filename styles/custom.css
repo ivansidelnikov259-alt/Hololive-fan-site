@@ -1,0 +1,98 @@
+/* Custom CSS for Hololive Bootstrap Site */
+
+/* Custom color variables */
+:root {
+    --hololive-blue: #4f46e5;
+    --hololive-pink: #ec4899;
+    --hololive-orange: #f59e0b;
+}
+
+/* Hero section gradient */
+.hero-section {
+    background: linear-gradient(135deg, var(--hololive-blue) 0%, var(--hololive-pink) 100%);
+}
+
+/* Talent card hover effects */
+.talent-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #1f2937;
+}
+
+.talent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Custom badge styles */
+.badge {
+    font-size: 0.7em;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom button styles */
+.btn-warning {
+    background-color: var(--hololive-orange);
+    border-color: var(--hololive-orange);
+}
+
+.btn-warning:hover {
+    background-color: #d97706;
+    border-color: #d97706;
+}
+
+/* Navbar brand customization */
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+/* Modal customizations */
+.modal-content {
+    border: 1px solid #4b5563;
+}
+
+/* Talent image placeholder styling */
+.card-img-top {
+    transition: opacity 0.3s ease;
+}
+
+.talent-card:hover .card-img-top {
+    opacity: 0.9;
+}
+
+/* Stats section numbers */
+.display-4 {
+    background: linear-gradient(135deg, var(--hololive-orange), var(--hololive-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section {
+        text-align: center;
+    }
+}
+
+/* Dark theme enhancements */
+.bg-dark {
+    background-color: #111827 !important;
+}
+
+.bg-secondary {
+    background-color: #374151 !important;
+}
+
+/* Form controls dark theme */
+.form-control:focus, .form-select:focus {
+    border-color: var(--hololive-blue);
+    box-shadow: 0 0 0 0.2rem rgba(79, 70, 229, 0.25);
+}

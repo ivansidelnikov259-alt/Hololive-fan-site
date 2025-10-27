@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hololive Talents - Hololive Fan Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/custom.css">
+</head>
+<body class="bg-dark text-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="bi bi-stars me-2"></i>Hololive Fan Portal
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">
+                            <i class="bi bi-house me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="talents.html">
+                            <i class="bi bi-people me-1"></i>Talents
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="news.html">
+                            <i class="bi bi-newspaper me-1"></i>News
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="py-4 bg-primary bg-opacity-25">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h1 class="display-5 fw-bold mb-0">Hololive Talents</h1>
+                </div>
+                <div class="col-auto">
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-light btn-sm">All</button>
+                        <button class="btn btn-outline-warning btn-sm">EN</button>
+                        <button class="btn btn-outline-info btn-sm">JP</button>
+                        <button class="btn btn-outline-success btn-sm">ID</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Talents Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Talent cards will be generated here -->
+                <!-- You can duplicate the talent card structure from index.html -->
+                <div class="col-md-6 col-lg-4 col-xl-3">
+                    <div class="card talent-card h-100 border-0 shadow-lg">
+                        <img src="https://via.placeholder.com/300x200/4f46e5/ffffff?text=Mori+Calliope" class="card-img-top" alt="Mori Calliope" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Mori Calliope</h5>
+                            <p class="card-text text-muted">Hololive English - Myth</p>
+                            <div class="d-flex flex-wrap gap-1">
+                                <span class="badge bg-dark">Reaper</span>
+                                <span class="badge bg-success">Myth</span>
+                                <span class="badge bg-info">EN</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Add more talent cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark border-top border-secondary py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 text-muted">&copy; 2024 Hololive Fan Portal. This is a fan site and is not officially affiliated with Cover Corp.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="d-flex justify-content-md-end gap-3">
+                        <a href="#" class="text-muted text-decoration-none">
+                            <i class="bi bi-twitter"></i> Twitter
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none">
+                            <i class="bi bi-youtube"></i> YouTube
+                        </a>
+                        <a href="#" class="text-muted text-decoration-none">
+                            <i class="bi bi-discord"></i> Discord
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
