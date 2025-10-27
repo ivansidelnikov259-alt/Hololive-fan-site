@@ -224,37 +224,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Show subgroup section
-    function showSubgroupSection(branch) {
-        const branchSubgroups = subgroups[branch];
-        
-        // Clear previous buttons
-        subgroupButtons.innerHTML = '';
-        
-        // Add "All" button
-        const allButton = document.createElement('button');
-        allButton.className = 'subgroup-btn active';
-        allButton.dataset.subgroup = 'all';
-        allButton.innerHTML = '<i class="bi bi-grid-3x3-gap me-1"></i>Все';
-        allButton.addEventListener('click', function() {
-            selectSubgroup('all');
+    // В функции showSubgroupSection добавьте:
+function showSubgroupSection(branch) {
+    const branchSubgroups = subgroups[branch];
+    
+    // Clear previous buttons
+    subgroupButtons.innerHTML = '';
+    
+    // Add "All" button
+    const allButton = document.createElement('button');
+    allButton.className = 'subgroup-btn active';
+    allButton.dataset.subgroup = 'all';
+    allButton.innerHTML = '<i class="bi bi-grid-3x3-gap me-1"></i>Все';
+    allButton.addEventListener('click', function() {
+        selectSubgroup('all');
+    });
+    subgroupButtons.appendChild(allButton);
+    
+    // Add subgroup buttons
+    branchSubgroups.forEach(subgroup => {
+        const button = document.createElement('button');
+        button.className = 'subgroup-btn';
+        button.dataset.subgroup = subgroup.value;
+        button.textContent = subgroup.name;
+        button.addEventListener('click', function() {
+            selectSubgroup(subgroup.value);
         });
-        subgroupButtons.appendChild(allButton);
-        
-        // Add subgroup buttons
-        branchSubgroups.forEach(subgroup => {
-            const button = document.createElement('button');
-            button.className = 'subgroup-btn';
-            button.dataset.subgroup = subgroup.value;
-            button.textContent = subgroup.name;
-            button.addEventListener('click', function() {
-                selectSubgroup(subgroup.value);
-            });
-            subgroupButtons.appendChild(button);
-        });
-        
-        subgroupSection.classList.remove('d-none');
-        console.log('Subgroup section shown for branch:', branch);
+        subgroupButtons.appendChild(button);
+    });
+    
+    // Показываем подменю с анимацией
+    subgroupSection.classList.remove('d-none');
+    
+    // Прокручиваем к подменю для мобильных устройств
+    if (window.innerWidth < 768) {
+        subgroupSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
+    
+    console.log('Subgroup section shown for branch:', branch);
+}
 
     // Hide subgroup section
     function hideSubgroupSection() {
