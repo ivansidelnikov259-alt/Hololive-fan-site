@@ -295,22 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Filter talents based on current selections
     function filterTalents() {
-        console.log('Filtering talents. Branch:', currentBranch, 'Subgroup:', currentSubgroup);
         
-        let filteredTalents = talents;
-        
-        // Filter by branch
-        if (currentBranch !== 'all') {
-            filteredTalents = filteredTalents.filter(talent => talent.branch === currentBranch);
-        }
-        
-        // Filter by subgroup
-        if (currentSubgroup !== 'all') {
-            filteredTalents = filteredTalents.filter(talent => talent.subgroup === currentSubgroup);
-        }
-        
-        console.log('Filtered talents count:', filteredTalents.length);
-        displayTalents(filteredTalents);
     }
 
     // Display talents in grid
