@@ -165,43 +165,6 @@ document.addEventListener('DOMContentLoaded', function() {
             colors: ["#DC143C", "#FF69B4", "#FFFFFF"],
             description: "Воплощение хаоса • Chaos",
             page: "hakos-baelz.html"
-        },
-        
-        // JP Examples
-        {
-            id: 12,
-            name: "Usada Pekora",
-            group: "JP - Gen 3",
-            subgroup: "gen3",
-            branch: "jp",
-            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Usada+Pekora",
-            colors: ["#dc2626", "#ffffff", "#fbbf24"],
-            description: "Японская витуберша, часть 3-го поколения hololive JP",
-            page: "usada-pekora.html"
-        },
-        {
-            id: 13,
-            name: "Hoshimachi Suisei",
-            group: "JP - Gen 0",
-            subgroup: "gen0",
-            branch: "jp",
-            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Hoshimachi+Suisei",
-            colors: ["#3b82f6", "#ffffff", "#dc2626"],
-            description: "Японская витуберша, часть 0-го поколения hololive JP",
-            page: "hoshimachi-suisei.html"
-        },
-        
-        // ID Examples
-        {
-            id: 14,
-            name: "Moona Hoshinova",
-            group: "ID - Zone 15",
-            subgroup: "zone15",
-            branch: "id",
-            image: "https://via.placeholder.com/400x300/1e293b/94a3b8?text=Moona+Hoshinova",
-            colors: ["#8b5cf6", "#ec4899", "#f59e0b"],
-            description: "Индонезийская витуберша, часть Zone 15 hololive ID",
-            page: "moona-hoshinova.html"
         }
     ];
 
@@ -408,8 +371,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const col = document.createElement('div');
         col.className = 'col-md-6 col-lg-4 col-xl-3 mb-4';
         
-        // Используем правильный путь к страницам талантов
-        const talentPagePath = `pages/talents/${talent.page}`;
+        // ИСПРАВЛЕННЫЙ ПУТЬ - используем относительный путь от текущей директории
+        const talentPagePath = `talents/${talent.page}`;
         
         col.innerHTML = `
             <div class="talent-card h-100">
