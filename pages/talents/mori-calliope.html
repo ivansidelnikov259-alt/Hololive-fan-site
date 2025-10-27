@@ -6,261 +6,197 @@
     <title>Mori Calliope - Hololive EN Myth</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../styles/custom.css">
-    <link rel="stylesheet" href="../styles/talent-group.css">
-    <link rel="stylesheet" href="../styles/talent-pages.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link rel="stylesheet" href="../../styles/talent-pages.css">
 </head>
-<body>
+<body class="talent-page">
+    <!-- Back Button -->
+    <a href="../talents.html" class="back-button text-white">
+        <i class="bi bi-arrow-left"></i>
+    </a>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">
+            <a class="navbar-brand fw-bold" href="../../index.html">
                 <i class="bi bi-stars me-2"></i>Hololive Fan Portal
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index.html">
-                            <i class="bi bi-house me-1"></i>Дом
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../pages/talents.html">
-                            <i class="bi bi-people me-1"></i>Таланты
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../pages/news.html">
-                            <i class="bi bi-newspaper me-1"></i>Новости
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../pages/merch.html">
-                            <i class="bi bi-bag me-1"></i>Мерч
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </nav>
 
-    <!-- Talent Hero Section -->
-    <section class="talent-hero calliope-hero py-5" style="padding-top: 100px !important;">
+    <!-- Hero Section -->
+    <section class="talent-hero calliope-theme py-5">
         <div class="container">
-            <!-- Кнопка назад -->
-            <div class="row mb-4">
-                <div class="col-12">
-                    <a href="../pages/talents.html" class="btn btn-outline-light btn-sm">
-                        <i class="bi bi-arrow-left me-2"></i>Назад к талантам
-                    </a>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                    <img src="https://via.placeholder.com/400x500/000000/ec4899?text=Mori+Calliope" 
+                         alt="Mori Calliope" class="talent-avatar">
                 </div>
-            </div>
-            
-            <div class="row align-items-center min-vh-50 py-5">
-                <div class="col-lg-8">
-                    <div class="hero-content">
-                        <h1 class="display-2 fw-bold text-white mb-4">Mori Calliope</h1>
-                        <p class="lead text-white mb-4">
-                            Рэпер-гребец смерти. Часть первого поколения hololive English -Myth-.
-                        </p>
-                        <div class="group-stats d-flex flex-wrap gap-4">
-                            <div class="stat-item">
-                                <div class="stat-number display-6 fw-bold text-white">2M+</div>
-                                <div class="stat-label text-white">Подписчиков</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number display-6 fw-bold text-white">2020</div>
-                                <div class="stat-label text-white">Дебют</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-number display-6 fw-bold text-white">EN</div>
-                                <div class="stat-label text-white">Подразделение</div>
+                <div class="col-md-8">
+                    <div class="talent-header text-white">
+                        <h1 class="display-3 fw-bold mb-3">Mori Calliope</h1>
+                        <p class="lead mb-4">Рэпер-гребец смерти • Hololive EN Myth</p>
+                        
+                        <div class="talent-stats">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number text-warning">4.2M+</div>
+                                        <div class="stat-label">YouTube</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number text-warning">EN</div>
+                                        <div class="stat-label">Подразделение</div>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="stat-item">
+                                        <div class="stat-number text-warning">2020</div>
+                                        <div class="stat-label">Дебют</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <div class="talent-image-wrapper">
-                        <img src="https://via.placeholder.com/400x500/000000/ec4899?text=Mori+Calliope" 
-                             alt="Mori Calliope" class="img-fluid rounded-3 shadow-lg">
+
+                        <div class="social-links mt-4">
+                            <a href="#" class="social-link text-white">
+                                <i class="bi bi-youtube"></i> YouTube
+                            </a>
+                            <a href="#" class="social-link text-white">
+                                <i class="bi bi-twitter"></i> Twitter
+                            </a>
+                            <a href="#" class="social-link text-white">
+                                <i class="bi bi-spotify"></i> Spotify
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Talent Info Section -->
-    <section class="py-5 bg-dark">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <h2 class="display-4 fw-bold calliope-color-primary mb-4">Обзор</h2>
-                    <p class="text-white mb-4">
-                        Каллиопа Мори — англоговорящая виртуальная ютуберша, часть первого поколения англоговорящих 
-                        виртуальных ютуберов Hololive наряду с Ина'нис Ниномае, Киарой Таканаши, Амелией Ватсон и Гавр Гурой.
-                    </p>
-                    
-                    <h3 class="fw-bold calliope-color-primary mb-3">История</h3>
-                    <p class="text-white mb-4">
-                        Она была представлена одновременно на аккаунтах hololive и hololive EN в Твиттер и на YouTube 
-                        канале hololive English в небольшом видео с остальными членами первого поколения 8 сентября 2020.
-                    </p>
+    <!-- Main Content -->
+    <main class="container py-5">
+        <!-- Biography -->
+        <section class="content-section">
+            <h2 class="section-title" style="border-color: #ec4899;">Биография</h2>
+            <p class="text-light">
+                Каллиопа Мори — англоговорящая виртуальная ютуберша, часть первого поколения англоговорящих 
+                виртуальных ютуберов Hololive наряду с Ина'нис Ниномае, Киарой Таканаши, Амелией Ватсон и Гавр Гурой.
+            </p>
+            <p class="text-light">
+                Как рэпер-гребец смерти, Каллиопа отвечает за переправу душ в загробный мир. Несмотря на свою 
+                мрачную профессию, она обладает яркой личностью и страстью к музыке.
+            </p>
+        </section>
 
-                    <div class="timeline-calliope mt-5">
-                        <div class="timeline-item">
-                            <div class="timeline-date fw-bold calliope-color-primary mb-2">Сентябрь 2020</div>
-                            <div class="timeline-content">
-                                <h4 class="calliope-color-secondary">Дебют</h4>
-                                <p class="text-white">
-                                    Дебютировала 12 сентября, выпустив свою первую оригинальную песню: 
-                                    «失礼しますが、RIP♡» (Excuse My Rudeness, But Could You Please RIP?) — рэп-песню, написанную ею самой.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date fw-bold calliope-color-primary mb-2">Октябрь 2020</div>
-                            <div class="timeline-content">
-                                <h4 class="calliope-color-secondary">500 тысяч подписчиков</h4>
-                                <p class="text-white">
-                                    22 октября достигла 500 тысяч подписчиков на Youtube.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date fw-bold calliope-color-primary mb-2">Январь 2021</div>
-                            <div class="timeline-content">
-                                <h4 class="calliope-color-secondary">1 миллион подписчиков</h4>
-                                <p class="text-white">
-                                    25 января Калли достигла 1 миллиона подписчиков на YouTube, став 7-м участником hololive, 
-                                    достигшим этой отметки, и 2-м в английском филиале после Гавр Гуры.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="timeline-date fw-bold calliope-color-primary mb-2">Март 2022</div>
-                            <div class="timeline-content">
-                                <h4 class="calliope-color-secondary">2 миллиона подписчиков</h4>
-                                <p class="text-white">
-                                    26 марта Каллиопа набрала 2 миллиона подписчиков на YouTube, став 2-м участником hololive 
-                                    и 3-м витубером, достигшим этого рубежа после Кидзуны Ай и Гавр Гуры.
-                                </p>
-                            </div>
-                        </div>
+        <!-- History -->
+        <section class="content-section">
+            <h2 class="section-title" style="border-color: #ec4899;">История</h2>
+            <div class="timeline" style="color: #ec4899;">
+                <div class="timeline-item">
+                    <div class="timeline-date text-warning">Сентябрь 2020</div>
+                    <div class="timeline-content text-light">
+                        <h4>Дебют</h4>
+                        <p>Дебютировала 12 сентября 2020 года, выпустив свою первую оригинальную песню 
+                        «Excuse My Rudeness, But Could You Please RIP?» — рэп-композицию, написанную ею самой.</p>
                     </div>
-
-                    <!-- Дискография -->
-                    <h3 class="fw-bold calliope-color-primary mt-5 mb-3">Дискография</h3>
-                    <div class="calliope-card p-4 mb-4">
-                        <h4 class="calliope-color-secondary mb-3">Мини-альбомы</h4>
-                        <div class="album-item mb-3">
-                            <h5 class="text-white">Dead Beats EP (デットビーツEP)</h5>
-                            <ul class="text-white-50">
-                                <li>ReaperかRapper? 自己紹介ラップ</li>
-                                <li>失礼しますが、RIP♡ (Excuse My Rudeness, But Could You Please RIP?)</li>
-                                <li>Dead Beats</li>
-                                <li>Live Again</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date text-warning">Октябрь 2020</div>
+                    <div class="timeline-content text-light">
+                        <h4>500K подписчиков</h4>
+                        <p>22 октября достигла 500 тысяч подписчиков на YouTube.</p>
                     </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date text-warning">Январь 2021</div>
+                    <div class="timeline-content text-light">
+                        <h4>1 миллион подписчиков</h4>
+                        <p>25 января достигла 1 миллиона подписчиков, став 7-м участником hololive, 
+                        достигшим этой отметки.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date text-warning">Март 2022</div>
+                    <div class="timeline-content text-light">
+                        <h4>2 миллиона подписчиков</h4>
+                        <p>26 марта набрала 2 миллиона подписчиков, став 3-м витубером, достигшим этого рубежа.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="calliope-card p-4">
-                        <h4 class="calliope-color-secondary mb-3">Синглы</h4>
-                        <ul class="text-white">
-                            <li>Cursed Night</li>
-                            <li>Off With Their Heads</li>
-                            <li>Ibasho (Where I Belong)</li>
+        <!-- Discography -->
+        <section class="content-section">
+            <h2 class="section-title" style="border-color: #ec4899;">Дискография</h2>
+            
+            <div class="discography-item" style="border-color: #ec4899;">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <img src="https://via.placeholder.com/80/000000/ec4899?text=DB" 
+                             alt="Dead Beats" class="album-cover">
+                    </div>
+                    <div class="col">
+                        <h4 class="text-white">Dead Beats EP</h4>
+                        <p class="text-muted mb-2">Дебютный мини-альбом</p>
+                        <ul class="text-light small">
+                            <li>ReaperかRapper? 自己紹介ラップ</li>
+                            <li>失礼しますが、RIP♡ (Excuse My Rudeness, But Could You Please RIP?)</li>
+                            <li>Dead Beats</li>
+                            <li>Live Again</li>
                         </ul>
                     </div>
                 </div>
-                
-                <div class="col-lg-4">
-                    <div class="calliope-card p-4 mb-4">
-                        <h3 class="fw-bold calliope-color-primary mb-3">Основная информация</h3>
-                        <div class="mb-3">
-                            <span class="fw-bold calliope-color-secondary">Имя:</span>
-                            <span class="text-white">Mori Calliope</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="fw-bold calliope-color-secondary">Роль:</span>
-                            <span class="text-white">Рэпер-гребец смерти</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="fw-bold calliope-color-secondary">Поколение:</span>
-                            <span class="text-white">Hololive English -Myth-</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="fw-bold calliope-color-secondary">Дебют:</span>
-                            <span class="text-white">12 сентября 2020</span>
-                        </div>
-                        <div class="mb-3">
-                            <span class="fw-bold calliope-color-secondary">Цвета:</span>
-                            <div class="d-flex gap-2 mt-2">
-                                <span class="color-dot" style="background-color: #000000"></span>
-                                <span class="color-dot" style="background-color: #ec4899"></span>
-                                <span class="color-dot" style="background-color: #dc2626"></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="calliope-card p-4 mb-4">
-                        <h3 class="fw-bold calliope-color-primary mb-3">Фанаты</h3>
-                        <p class="text-white mb-0">
-                            Поклонники именуются «бездельниками» (Dead Beats, デットビーツ).
-                        </p>
-                    </div>
+            </div>
 
-                    <div class="calliope-card p-4">
-                        <h3 class="fw-bold calliope-color-primary mb-3">Интересные факты</h3>
-                        <div class="fact-card">
-                            <p class="text-white mb-0">
-                                На японском её имя пишется как「森美声」. «Мори» — японская фамилия, означающая «лес», 
-                                а на латыни переводится как «умереть».
-                            </p>
-                        </div>
-                        <div class="fact-card">
-                            <p class="text-white mb-0">
-                                В греческой мифологии «Каллиопа» — имя музы, богини эпической поэзии.
-                            </p>
-                        </div>
-                        <div class="fact-card">
-                            <p class="text-white mb-0">
-                                Каллиопа была первой дебютировавшей участницей hololive English.
-                            </p>
-                        </div>
-                    </div>
+            <div class="discography-item" style="border-color: #ec4899;">
+                <h4 class="text-white">Синглы</h4>
+                <ul class="text-light">
+                    <li>Cursed Night (2020)</li>
+                    <li>Off With Their Heads (2021)</li>
+                    <li>Ibasho (Where I Belong) (2021)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Interesting Facts -->
+        <section class="content-section">
+            <h2 class="section-title" style="border-color: #ec4899;">Интересные факты</h2>
+            <div class="facts-grid">
+                <div class="fact-item" style="border-color: #ec4899;">
+                    <h5 class="text-white">Имя</h5>
+                    <p class="text-light mb-0">На японском её имя пишется как「森美声». «Мори» означает «лес» на японском и «умереть» на латыни.</p>
+                </div>
+                <div class="fact-item" style="border-color: #ec4899;">
+                    <h5 class="text-white">Происхождение</h5>
+                    <p class="text-light mb-0">«Каллиопа» — имя музы эпической поэзии в греческой мифологии.</p>
+                </div>
+                <div class="fact-item" style="border-color: #ec4899;">
+                    <h5 class="text-white">Рекорд</h5>
+                    <p class="text-light mb-0">Первая дебютировавшая участница hololive English.</p>
+                </div>
+                <div class="fact-item" style="border-color: #ec4899;">
+                    <h5 class="text-white">Фанаты</h5>
+                    <p class="text-light mb-0">Поклонники именуются «бездельниками» (Dead Beats).</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-dark border-top border-secondary py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0 text-muted">&copy; 2024 Hololive Fan Portal. Это фанатский сайт и не имеет официального отношения к Cover Corp.</p>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="d-flex justify-content-md-end gap-3">
-                        <a href="#" class="text-muted text-decoration-none">
-                            <i class="bi bi-twitter"></i> Twitter
-                        </a>
-                        <a href="#" class="text-muted text-decoration-none">
-                            <i class="bi bi-youtube"></i> YouTube
-                        </a>
-                        <a href="#" class="text-muted text-decoration-none">
-                            <i class="bi bi-discord"></i> Discord
-                        </a>
-                    </div>
+                    <p class="mb-0 text-muted">&copy; 2024 Hololive Fan Portal. Фанатский сайт.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
