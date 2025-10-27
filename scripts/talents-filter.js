@@ -119,6 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function initialize() {
         displayTalents(talents);
         setupEventListeners();
+        
+        // Устанавливаем активную кнопку "All" по умолчанию
+        const allBranchBtn = document.querySelector('.branch-btn[data-branch="all"]');
+        if (allBranchBtn) {
+            allBranchBtn.classList.add('active');
+        }
     }
 
     // Setup event listeners
@@ -160,6 +166,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Select subgroup
     function selectSubgroup(subgroup) {
+        currentSubgroup = subgroup;
+
         // Update active subgroup button
         const allSubgroupButtons = subgroupButtons.querySelectorAll('.subgroup-btn');
         allSubgroupButtons.forEach(btn => {
@@ -168,8 +176,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.classList.add('active');
             }
         });
-
-        currentSubgroup = subgroup;
 
         // Show group info if available
         if (subgroup !== 'all' && groupDescriptions[subgroup]) {
