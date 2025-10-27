@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
+<html lang="ru" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hololive Talents - Hololive Fan Portal</title>
+    <title>Таланты - Hololive Fan Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../styles/custom.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/talents.css">
+    <link rel="stylesheet" href="../styles/responsive.css">
 </head>
-<body class="bg-dark text-light">
+<body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top custom-navbar">
         <div class="container">
             <a class="navbar-brand fw-bold" href="../index.html">
                 <i class="bi bi-stars me-2"></i>Hololive Fan Portal
@@ -22,22 +24,22 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">
-                            <i class="bi bi-house me-1"></i>Home
+                            <i class="bi bi-house me-1"></i>Дом
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="talents.html">
-                            <i class="bi bi-people me-1"></i>Talents
+                            <i class="bi bi-people me-1"></i>Таланты
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="news.html">
-                            <i class="bi bi-newspaper me-1"></i>News
+                            <i class="bi bi-newspaper me-1"></i>Новости
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            <i class="bi bi-info-circle me-1"></i>About
+                        <a class="nav-link" href="merch.html">
+                            <i class="bi bi-bag me-1"></i>Мерч
                         </a>
                     </li>
                 </ul>
@@ -45,57 +47,99 @@
         </div>
     </nav>
 
-    <!-- Page Header -->
-    <section class="py-4 bg-primary bg-opacity-25">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h1 class="display-5 fw-bold mb-0">Hololive Talents</h1>
-                </div>
-                <div class="col-auto">
-                    <div class="d-flex gap-2">
-                        <button class="btn btn-outline-light btn-sm">All</button>
-                        <button class="btn btn-outline-warning btn-sm">EN</button>
-                        <button class="btn btn-outline-info btn-sm">JP</button>
-                        <button class="btn btn-outline-success btn-sm">ID</button>
-                    </div>
+    <!-- Main Content -->
+    <main class="talents-page">
+        <div class="container py-5 mt-5">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="display-4 fw-bold text-white text-center mb-3">Таланты Hololive</h1>
+                    <p class="lead text-center text-muted">Откройте для себя всех виртуальных талантов Hololive Production</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Talents Grid -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Talent cards will be generated here -->
-                <!-- You can duplicate the talent card structure from index.html -->
-                <div class="col-md-6 col-lg-4 col-xl-3">
-                    <div class="card talent-card h-100 border-0 shadow-lg">
-                        <img src="https://via.placeholder.com/300x200/4f46e5/ffffff?text=Mori+Calliope" class="card-img-top" alt="Mori Calliope" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Mori Calliope</h5>
-                            <p class="card-text text-muted">Hololive English - Myth</p>
-                            <div class="d-flex flex-wrap gap-1">
-                                <span class="badge bg-dark">Reaper</span>
-                                <span class="badge bg-success">Myth</span>
-                                <span class="badge bg-info">EN</span>
+            <!-- Filter Section -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="filter-container bg-dark rounded-3 p-4">
+                        <h3 class="text-white mb-4">Фильтр по подразделениям</h3>
+                        
+                        <!-- Main Branch Filter -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-3">
+                                <label class="form-label text-white">Основное подразделение</label>
+                                <select class="form-select bg-secondary text-white border-0" id="mainBranchFilter">
+                                    <option value="all">ALL - Все таланты</option>
+                                    <option value="en">EN - Английское</option>
+                                    <option value="jp">JP - Японское</option>
+                                    <option value="id">ID - Индонезийское</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Subgroup Filter -->
+                            <div class="col-md-6">
+                                <label class="form-label text-white">Подгруппа</label>
+                                <select class="form-select bg-secondary text-white border-0" id="subgroupFilter">
+                                    <option value="all">Все подгруппы</option>
+                                    <!-- Options will be populated by JavaScript -->
+                                </select>
+                            </div>
+                            
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button class="btn btn-outline-light w-100" id="resetFilters">
+                                    <i class="bi bi-arrow-clockwise me-2"></i>Сбросить
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quick Filter Buttons -->
+                        <div class="quick-filters">
+                            <h5 class="text-white mb-3">Быстрый доступ:</h5>
+                            <div class="d-flex flex-wrap gap-2">
+                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="myth">EN - Myth</button>
+                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="hope">EN - Project: HOPE</button>
+                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="council">EN - Council</button>
+                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="promise">EN - Promise</button>
+                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="advent">EN - Advent</button>
+                                <button class="btn btn-sm btn-outline-primary quick-filter" data-branch="en" data-subgroup="justice">EN - Justice</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Add more talent cards as needed -->
+            </div>
+
+            <!-- Group Info Section (will be populated when subgroup selected) -->
+            <div class="row mb-5 d-none" id="groupInfoSection">
+                <div class="col-12">
+                    <div class="group-info-card bg-primary bg-opacity-10 rounded-3 p-4 border-start border-4 border-primary">
+                        <h3 class="text-white mb-3" id="groupTitle"></h3>
+                        <p class="text-muted mb-0" id="groupDescription"></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Talents Grid -->
+            <div class="row" id="talentsContainer">
+                <!-- Talents will be loaded here by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div class="row d-none" id="emptyState">
+                <div class="col-12 text-center py-5">
+                    <i class="bi bi-search display-1 text-muted mb-3"></i>
+                    <h3 class="text-white">Таланты не найдены</h3>
+                    <p class="text-muted">Попробуйте изменить параметры фильтра</p>
+                </div>
             </div>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-dark border-top border-secondary py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p class="mb-0 text-muted">&copy; 2024 Hololive Fan Portal. This is a fan site and is not officially affiliated with Cover Corp.</p>
+                    <p class="mb-0 text-muted">&copy; 2024 Hololive Fan Portal. Это фанатский сайт и не имеет официального отношения к Cover Corp.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="d-flex justify-content-md-end gap-3">
@@ -114,6 +158,8 @@
         </div>
     </footer>
 
+    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/talents-filter.js"></script>
 </body>
 </html>

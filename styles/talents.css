@@ -1,0 +1,139 @@
+/* Talents Page Specific Styles */
+.talents-page {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    min-height: 100vh;
+}
+
+.filter-container {
+    backdrop-filter: blur(10px);
+    border: 1px solid #334155;
+}
+
+.group-info-card {
+    backdrop-filter: blur(10px);
+    border: 1px solid #334155;
+}
+
+/* Talent Card Styles */
+.talent-card {
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.talent-card:hover {
+    transform: translateY(-8px);
+    border-color: #4f46e5;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.talent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #4f46e5, #ec4899);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.talent-card:hover::before {
+    transform: scaleX(1);
+}
+
+.talent-image {
+    height: 250px;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.talent-card:hover .talent-image {
+    transform: scale(1.05);
+}
+
+.talent-info {
+    padding: 1.5rem;
+}
+
+.talent-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+}
+
+.talent-group {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.talent-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.badge-custom {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Quick Filter Buttons */
+.quick-filter {
+    transition: all 0.3s ease;
+}
+
+.quick-filter:hover {
+    transform: translateY(-2px);
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #4f46e5;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Empty State */
+#emptyState {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+/* Responsive adjustments for talents page */
+@media (max-width: 768px) {
+    .talent-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .filter-container {
+        padding: 1.5rem !important;
+    }
+    
+    .quick-filters .btn {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
