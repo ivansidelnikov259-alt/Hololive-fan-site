@@ -288,26 +288,57 @@
     }
 }
 
-/* Дополнительные стили для обновленных цветовых схем */
+/* ОБНОВЛЕННЫЕ ЦВЕТОВЫЕ ТОЧКИ - ПРАВИЛЬНЫЕ СЕЛЕКТОРЫ */
 
 /* Цветовые точки для Киары - больше оранжевого */
-.kiara-card .color-dot:nth-child(1) {
-    background-color: #f59e0b; /* Основной оранжевый */
+.kiara-card .talent-colors .color-dot:nth-child(1) {
+    background-color: #f59e0b !important; /* Основной оранжевый */
 }
-.kiara-card .color-dot:nth-child(2) {
-    background-color: #dc2626; /* Красный вместо голубого */
+.kiara-card .talent-colors .color-dot:nth-child(2) {
+    background-color: #dc2626 !important; /* Красный вместо голубого */
 }
-.kiara-card .color-dot:nth-child(3) {
-    background-color: #d97706; /* Темный оранжевый */
+.kiara-card .talent-colors .color-dot:nth-child(3) {
+    background-color: #d97706 !important; /* Темный оранжевый */
 }
 
 /* Цветовые точки для Ины - более темные фиолетовые оттенки */
-.inanis-card .color-dot:nth-child(1) {
-    background-color: #7c3aed; /* Темный фиолетовый */
+.inanis-card .talent-colors .color-dot:nth-child(1) {
+    background-color: #7c3aed !important; /* Темный фиолетовый */
 }
-.inanis-card .color-dot:nth-child(2) {
-    background-color: #6d28d9; /* Еще темнее */
+.inanis-card .talent-colors .color-dot:nth-child(2) {
+    background-color: #6d28d9 !important; /* Еще темнее */
 }
-.inanis-card .color-dot:nth-child(3) {
-    background-color: #5b21b6; /* Самый темный фиолетовый */
+.inanis-card .talent-colors .color-dot:nth-child(3) {
+    background-color: #5b21b6 !important; /* Самый темный фиолетовый */
+}
+
+/* Цветовые точки для остальных участников */
+.calliope-card .talent-colors .color-dot:nth-child(1) {
+    background-color: #000000 !important;
+}
+.calliope-card .talent-colors .color-dot:nth-child(2) {
+    background-color: #ec4899 !important;
+}
+.calliope-card .talent-colors .color-dot:nth-child(3) {
+    background-color: #dc2626 !important;
+}
+
+.amelia-card .talent-colors .color-dot:nth-child(1) {
+    background-color: #fbbf24 !important;
+}
+.amelia-card .talent-colors .color-dot:nth-child(2) {
+    background-color: #60a5fa !important;
+}
+.amelia-card .talent-colors .color-dot:nth-child(3) {
+    background-color: #f59e0b !important;
+}
+
+.gura-card .talent-colors .color-dot:nth-child(1) {
+    background-color: #4f46e5 !important;
+}
+.gura-card .talent-colors .color-dot:nth-child(2) {
+    background-color: #ffffff !important;
+}
+.gura-card .talent-colors .color-dot:nth-child(3) {
+    background-color: #dc2626 !important;
 }
