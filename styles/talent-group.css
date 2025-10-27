@@ -148,14 +148,16 @@
     box-shadow: 0 25px 50px rgba(236, 72, 153, 0.3);
 }
 
+/* Обновленные цвета для Киары - больше оранжевого, меньше голубого */
 .kiara-card:hover {
     border-color: #f59e0b;
-    box-shadow: 0 25px 50px rgba(245, 158, 11, 0.3);
+    box-shadow: 0 25px 50px rgba(245, 158, 11, 0.4);
 }
 
+/* Обновленные цвета для Ины - более темные фиолетовые оттенки */
 .inanis-card:hover {
-    border-color: #8b5cf6;
-    box-shadow: 0 25px 50px rgba(139, 92, 246, 0.3);
+    border-color: #7c3aed;
+    box-shadow: 0 25px 50px rgba(124, 58, 237, 0.4);
 }
 
 .amelia-card:hover {
@@ -225,9 +227,18 @@
     margin: 0;
 }
 
-/* Custom Badge Colors */
+/* Обновленные цвета для бейджей */
 .bg-purple {
-    background-color: #8b5cf6 !important;
+    background-color: #7c3aed !important; /* Более темный фиолетовый для Ины */
+}
+
+/* Новые классы для обновленных цветов */
+.bg-orange {
+    background-color: #f59e0b !important; /* Яркий оранжевый для Киары */
+}
+
+.bg-deep-purple {
+    background-color: #6d28d9 !important; /* Глубокий фиолетовый */
 }
 
 /* Floating Animation */
@@ -275,4 +286,28 @@
     .talent-image-wrapper {
         height: 250px;
     }
+}
+
+/* Дополнительные стили для обновленных цветовых схем */
+
+/* Цветовые точки для Киары - больше оранжевого */
+.kiara-card .color-dot:nth-child(1) {
+    background-color: #f59e0b; /* Основной оранжевый */
+}
+.kiara-card .color-dot:nth-child(2) {
+    background-color: #dc2626; /* Красный вместо голубого */
+}
+.kiara-card .color-dot:nth-child(3) {
+    background-color: #d97706; /* Темный оранжевый */
+}
+
+/* Цветовые точки для Ины - более темные фиолетовые оттенки */
+.inanis-card .color-dot:nth-child(1) {
+    background-color: #7c3aed; /* Темный фиолетовый */
+}
+.inanis-card .color-dot:nth-child(2) {
+    background-color: #6d28d9; /* Еще темнее */
+}
+.inanis-card .color-dot:nth-child(3) {
+    background-color: #5b21b6; /* Самый темный фиолетовый */
 }
