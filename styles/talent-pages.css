@@ -507,3 +507,80 @@
     font-size: 2rem;
     margin-bottom: 1rem;
 }
+/* Fauna Theme */
+.fauna-theme {
+    background: linear-gradient(135deg, #228B22 0%, #90EE90 50%, #0f172a 100%);
+}
+
+/* Origins Grid */
+.origins-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.origin-item {
+    background: rgba(30, 41, 59, 0.7);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.origin-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(34, 139, 34, 0.3);
+}
+
+.origin-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Facts Grid with Icons */
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.fact-item {
+    background: rgba(30, 41, 59, 0.7);
+    border: 2px solid;
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.fact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(34, 139, 34, 0.3);
+}
+
+.fact-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Legacy Grid */
+.legacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.legacy-item {
+    background: rgba(30, 41, 59, 0.7);
+    border-left: 4px solid;
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.legacy-item:hover {
+    transform: translateY(-3px);
+}
